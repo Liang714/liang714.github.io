@@ -1,0 +1,613 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-22T11:20:04.138Z",
+  "title": "Design System: Liang — AI Engineer portfolio",
+  "extensions": {
+    "colorMeta": {
+      "sheet": {
+        "role": "neutral",
+        "displayName": "Reflective Sheet",
+        "canonical": "#f3f6f4",
+        "oklch": "oklch(97.0% 0.004 157)",
+        "tonalRamp": [
+          "#151715",
+          "#2e312f",
+          "#4a4d4b",
+          "#696b69",
+          "#888b89",
+          "#aaacab",
+          "#cccfcd",
+          "#f0f3f1"
+        ]
+      },
+      "sheet-raised": {
+        "role": "neutral",
+        "displayName": "Raised Sheet",
+        "canonical": "#e6ebe8",
+        "oklch": "oklch(93.5% 0.007 160)",
+        "tonalRamp": [
+          "#141715",
+          "#2d312f",
+          "#494d4b",
+          "#676c69",
+          "#878c89",
+          "#a8adaa",
+          "#cbd0cd",
+          "#eef3f0"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#0c0f10",
+        "oklch": "oklch(16.6% 0.005 220)",
+        "tonalRamp": [
+          "#131718",
+          "#2d3132",
+          "#494d4e",
+          "#676b6d",
+          "#878b8d",
+          "#a8acae",
+          "#cbcfd0",
+          "#eef3f4"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Soft Ink",
+        "canonical": "#2f383c",
+        "oklch": "oklch(33.4% 0.014 226)",
+        "tonalRamp": [
+          "#0f171b",
+          "#293235",
+          "#454e52",
+          "#626c71",
+          "#828c91",
+          "#a3aeb3",
+          "#c5d0d5",
+          "#e9f4f9"
+        ]
+      },
+      "ink-quiet": {
+        "role": "neutral",
+        "displayName": "Quiet Ink",
+        "canonical": "#55616a",
+        "oklch": "oklch(48.6% 0.021 240)",
+        "tonalRamp": [
+          "#0d171f",
+          "#27323a",
+          "#424e57",
+          "#606c76",
+          "#808c96",
+          "#a1aeb8",
+          "#c3d0db",
+          "#e6f4ff"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#c3ccc8",
+        "oklch": "oklch(83.7% 0.011 168)",
+        "tonalRamp": [
+          "#111815",
+          "#2b322f",
+          "#474e4b",
+          "#656d69",
+          "#848d89",
+          "#a5aeaa",
+          "#c8d1cd",
+          "#ebf4f0"
+        ]
+      },
+      "rule-strong": {
+        "role": "neutral",
+        "displayName": "Strong Hairline",
+        "canonical": "#8b9792",
+        "oklch": "oklch(66.5% 0.016 169)",
+        "tonalRamp": [
+          "#0f1815",
+          "#28332f",
+          "#444f4b",
+          "#626e69",
+          "#828e89",
+          "#a3afaa",
+          "#c5d2cc",
+          "#e8f5f0"
+        ]
+      },
+      "sign-face": {
+        "role": "neutral",
+        "displayName": "Sign Face",
+        "canonical": "#fbfcfb",
+        "oklch": "oklch(99.0% 0.002 0)",
+        "tonalRamp": [
+          "#161616",
+          "#2f302f",
+          "#4c4c4c",
+          "#6a6b6a",
+          "#8a8b8a",
+          "#abacab",
+          "#cdcecd",
+          "#f1f2f1"
+        ]
+      },
+      "sign-face-rule": {
+        "role": "neutral",
+        "displayName": "Sign Face Hairline",
+        "canonical": "#d3dad7",
+        "oklch": "oklch(88.2% 0.009 169)",
+        "tonalRamp": [
+          "#121715",
+          "#2c312f",
+          "#484e4b",
+          "#666c6a",
+          "#868c89",
+          "#a7adab",
+          "#c9d0cd",
+          "#edf4f1"
+        ]
+      },
+      "board": {
+        "role": "neutral",
+        "displayName": "Dark Board",
+        "canonical": "#0f1314",
+        "oklch": "oklch(18.3% 0.007 214)",
+        "tonalRamp": [
+          "#131718",
+          "#2c3132",
+          "#484d4e",
+          "#666c6d",
+          "#868b8d",
+          "#a7adae",
+          "#cacfd1",
+          "#edf3f4"
+        ]
+      },
+      "night-sheet": {
+        "role": "neutral",
+        "displayName": "Night Sheet",
+        "canonical": "#0e1112",
+        "oklch": "oklch(17.5% 0.005 220)",
+        "tonalRamp": [
+          "#141718",
+          "#2d3132",
+          "#494d4e",
+          "#676b6d",
+          "#878b8d",
+          "#a8acae",
+          "#cbcfd0",
+          "#eef3f4"
+        ]
+      },
+      "night-sheet-raised": {
+        "role": "neutral",
+        "displayName": "Night Raised Sheet",
+        "canonical": "#161b1c",
+        "oklch": "oklch(21.7% 0.008 211)",
+        "tonalRamp": [
+          "#121718",
+          "#2c3132",
+          "#484d4f",
+          "#666c6d",
+          "#858c8d",
+          "#a6adae",
+          "#c9d0d1",
+          "#ecf3f5"
+        ]
+      },
+      "night-ink": {
+        "role": "neutral",
+        "displayName": "Night Ink",
+        "canonical": "#eef2f0",
+        "oklch": "oklch(95.8% 0.005 165)",
+        "tonalRamp": [
+          "#141715",
+          "#2e312f",
+          "#4a4d4c",
+          "#686b6a",
+          "#888b8a",
+          "#a9adab",
+          "#cbcfcd",
+          "#eff3f1"
+        ]
+      },
+      "night-sign-face": {
+        "role": "neutral",
+        "displayName": "Night Sign Face",
+        "canonical": "#e8edeb",
+        "oklch": "oklch(94.2% 0.006 170)",
+        "tonalRamp": [
+          "#131716",
+          "#2d312f",
+          "#494d4c",
+          "#676c6a",
+          "#878c8a",
+          "#a8adab",
+          "#cbcfcd",
+          "#eef3f1"
+        ]
+      },
+      "night-board": {
+        "role": "neutral",
+        "displayName": "Night Board",
+        "canonical": "#070a0b",
+        "oklch": "oklch(14.1% 0.006 218)",
+        "tonalRamp": [
+          "#131718",
+          "#2d3132",
+          "#494d4e",
+          "#676b6d",
+          "#878b8d",
+          "#a8adae",
+          "#cacfd1",
+          "#eef3f4"
+        ]
+      },
+      "action-blue": {
+        "role": "primary",
+        "displayName": "Action Blue",
+        "canonical": "#0a59b5",
+        "oklch": "oklch(47.7% 0.162 257)",
+        "tonalRamp": [
+          "#001535",
+          "#012d65",
+          "#024999",
+          "#1f68c5",
+          "#438aea",
+          "#73adff",
+          "#b0d1ff",
+          "#eaf3fe"
+        ]
+      },
+      "permit-green": {
+        "role": "secondary",
+        "displayName": "Permit Green",
+        "canonical": "#0e7a55",
+        "oklch": "oklch(51.4% 0.108 163)",
+        "tonalRamp": [
+          "#011c10",
+          "#023a26",
+          "#025b3e",
+          "#157d58",
+          "#419f77",
+          "#65c198",
+          "#89e5ba",
+          "#cfffe6"
+        ]
+      },
+      "caution-yellow": {
+        "role": "tertiary",
+        "displayName": "Caution Yellow",
+        "canonical": "#ffc20e",
+        "oklch": "oklch(84.6% 0.172 85)",
+        "tonalRamp": [
+          "#1e1401",
+          "#3e2d02",
+          "#614804",
+          "#876500",
+          "#ae8302",
+          "#d7a304",
+          "#ffc429",
+          "#fff0d3"
+        ]
+      },
+      "block-red": {
+        "role": "tertiary",
+        "displayName": "Block Red",
+        "canonical": "#c8281e",
+        "oklch": "oklch(54.1% 0.197 29)",
+        "tonalRamp": [
+          "#320100",
+          "#600201",
+          "#930101",
+          "#c22118",
+          "#e94c3d",
+          "#ff8170",
+          "#ffbbb0",
+          "#feedeb"
+        ]
+      },
+      "on-signal": {
+        "role": "neutral",
+        "displayName": "White on Signal",
+        "canonical": "#ffffff",
+        "oklch": "oklch(100.0% 0.000 0)",
+        "tonalRamp": [
+          "#161616",
+          "#303030",
+          "#4c4c4c",
+          "#6a6a6a",
+          "#8a8a8a",
+          "#acacac",
+          "#cecece",
+          "#f2f2f2"
+        ]
+      },
+      "on-yellow": {
+        "role": "neutral",
+        "displayName": "Ink on Yellow",
+        "canonical": "#0c0f10",
+        "oklch": "oklch(16.6% 0.005 220)",
+        "tonalRamp": [
+          "#131718",
+          "#2d3132",
+          "#494d4e",
+          "#676b6d",
+          "#878b8d",
+          "#a8acae",
+          "#cbcfd0",
+          "#eef3f4"
+        ]
+      },
+      "blue-text-night": {
+        "role": "neutral",
+        "displayName": "Night Blue Text",
+        "canonical": "#7db5ff",
+        "oklch": "oklch(76.4% 0.122 256)",
+        "tonalRamp": [
+          "#001533",
+          "#002e63",
+          "#154b8d",
+          "#366baf",
+          "#568cd3",
+          "#76aef8",
+          "#afd1ff",
+          "#eaf3fe"
+        ]
+      },
+      "green-text-night": {
+        "role": "neutral",
+        "displayName": "Night Green Text",
+        "canonical": "#46d09a",
+        "oklch": "oklch(77.0% 0.143 163)",
+        "tonalRamp": [
+          "#001c10",
+          "#003a26",
+          "#045b3e",
+          "#037e58",
+          "#01a372",
+          "#3ac792",
+          "#66ebb4",
+          "#cfffe7"
+        ]
+      },
+      "red-text-night": {
+        "role": "neutral",
+        "displayName": "Night Red Text",
+        "canonical": "#ff7d70",
+        "oklch": "oklch(73.7% 0.161 27)",
+        "tonalRamp": [
+          "#320001",
+          "#600104",
+          "#900f11",
+          "#b53932",
+          "#db5c52",
+          "#fe8174",
+          "#ffbbb1",
+          "#feedeb"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The hero headline only. Barlow Condensed 700, tight and upright."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles, balanced across two lines."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Card, panel and note titles."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "All reading text, held to 68ch. Overpass Variable."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Buttons, gate names, nav items, table headers. Uppercase condensed."
+      },
+      "code": {
+        "displayName": "Code",
+        "purpose": "Proposals, paths and ledger rows only. Overpass Mono Variable."
+      }
+    },
+    "shadows": [
+      {
+        "name": "sign",
+        "value": "0 1px 2px rgb(8 12 14 / 0.14), 0 16px 28px -18px rgb(8 12 14 / 0.42)",
+        "purpose": "Resting shadow of every sign panel."
+      },
+      {
+        "name": "lift",
+        "value": "0 2px 4px rgb(8 12 14 / 0.16), 0 24px 36px -20px rgb(8 12 14 / 0.52)",
+        "purpose": "Reserved for a raised state."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "The single easing for every state change."
+      },
+      {
+        "name": "dur-1",
+        "value": "120ms",
+        "purpose": "Hover and press feedback."
+      },
+      {
+        "name": "dur-2",
+        "value": "220ms",
+        "purpose": "A verdict sign flipping; an arrow sliding."
+      },
+      {
+        "name": "dur-3",
+        "value": "300ms",
+        "purpose": "Signs hanging into place. The ceiling for any animation."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "bp-640px",
+        "value": "640px"
+      },
+      {
+        "name": "bp-800px",
+        "value": "800px"
+      },
+      {
+        "name": "bp-960px",
+        "value": "960px"
+      },
+      {
+        "name": "bp-1000px",
+        "value": "1000px"
+      },
+      {
+        "name": "bp-1100px",
+        "value": "1100px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one action to take: a blue label cell with its arrow locked to the right edge.",
+      "html": "<a class=\"ds-btn ds-btn-primary\" href=\"#\"><span class=\"ds-btn__label\">Explore my work</span><span class=\"ds-btn__arrow\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 48 48\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M6 24h34M27 11l13 13-13 13\"/></svg></span></a>",
+      "css": ".ds-btn-primary{display:inline-grid;grid-auto-flow:column;align-items:stretch;min-height:52px;overflow:hidden;border-radius:10px;font:700 1.2rem/1.1 \"Barlow Condensed\",\"Arial Narrow\",sans-serif;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;transition:transform 120ms cubic-bezier(.16,1,.3,1),box-shadow 220ms cubic-bezier(.16,1,.3,1);background:#0a59b5;color:#fff;border:2px solid #0a59b5;text-decoration:none}.ds-btn__label{display:flex;align-items:center;padding:0 20px}.ds-btn__arrow{display:grid;place-items:center;width:52px;border-left:2px solid color-mix(in srgb,currentColor 38%,transparent);background:color-mix(in srgb,currentColor 12%,transparent)}.ds-btn__arrow svg{transition:transform 220ms cubic-bezier(.16,1,.3,1)}.ds-btn:hover{transform:translateY(-1px);box-shadow:0 1px 2px rgba(8,12,14,.14),0 16px 28px -18px rgba(8,12,14,.42)}.ds-btn:hover .ds-btn__arrow svg{transform:translateX(3px)}.ds-btn:active{transform:translateY(1px);box-shadow:none}.ds-btn:focus-visible{outline:3px solid #0a59b5;outline-offset:3px}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "A lesser action on a sign face: ink outline, same edge-locked arrow.",
+      "html": "<a class=\"ds-btn ds-btn-secondary\" href=\"#\"><span class=\"ds-btn__label\">Get in touch</span><span class=\"ds-btn__arrow\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 48 48\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M6 24h34M27 11l13 13-13 13\"/></svg></span></a>",
+      "css": ".ds-btn-secondary{display:inline-grid;grid-auto-flow:column;align-items:stretch;min-height:52px;overflow:hidden;border-radius:10px;font:700 1.2rem/1.1 \"Barlow Condensed\",\"Arial Narrow\",sans-serif;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;transition:transform 120ms cubic-bezier(.16,1,.3,1),box-shadow 220ms cubic-bezier(.16,1,.3,1);background:#fbfcfb;color:#0c0f10;border:2px solid #0c0f10;text-decoration:none}.ds-btn__label{display:flex;align-items:center;padding:0 20px}.ds-btn__arrow{display:grid;place-items:center;width:52px;border-left:2px solid color-mix(in srgb,currentColor 38%,transparent);background:color-mix(in srgb,currentColor 12%,transparent)}.ds-btn__arrow svg{transition:transform 220ms cubic-bezier(.16,1,.3,1)}.ds-btn:hover{transform:translateY(-1px);box-shadow:0 1px 2px rgba(8,12,14,.14),0 16px 28px -18px rgba(8,12,14,.42)}.ds-btn:hover .ds-btn__arrow svg{transform:translateX(3px)}.ds-btn:active{transform:translateY(1px);box-shadow:none}.ds-btn:focus-visible{outline:3px solid #0a59b5;outline-offset:3px}"
+    },
+    {
+      "name": "Chip Button",
+      "kind": "chip",
+      "refersTo": "chip-button",
+      "description": "A choice in a row of requests; the selected one inverts to ink.",
+      "html": "<button class=\"ds-chip\" type=\"button\">Rename an invoice</button> <button class=\"ds-chip\" type=\"button\" aria-pressed=\"true\">Delete 12 drafts</button>",
+      "css": ".ds-chip{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border:2px solid #0c0f10;border-radius:8px;background:transparent;color:#0c0f10;font:700 1.05rem \"Barlow Condensed\",\"Arial Narrow\",sans-serif;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;transition:transform 120ms cubic-bezier(.16,1,.3,1)}.ds-chip:hover{transform:translateY(-1px)}.ds-chip:active{transform:translateY(1px)}.ds-chip[aria-pressed=true]{background:#0c0f10;color:#f3f6f4}.ds-chip:focus-visible{outline:3px solid #0a59b5;outline-offset:3px}"
+    },
+    {
+      "name": "Sign Panel",
+      "kind": "card",
+      "refersTo": "sign-panel",
+      "description": "A reflective white face with an inset border and a soft hanging shadow.",
+      "html": "<div class=\"ds-sign\"><h3>Computer-use agent core</h3><p>An agent where the model proposes and a broker decides.</p></div>",
+      "css": ".ds-sign{position:relative;padding:32px;border-radius:14px;background:#fbfcfb;color:#0c0f10;box-shadow:0 1px 2px rgba(8,12,14,.14),0 16px 28px -18px rgba(8,12,14,.42),0 0 0 1px #d3dad7;font:400 1.0625rem/1.62 \"Overpass Variable\",\"Helvetica Neue\",sans-serif}.ds-sign::before{content:\"\";position:absolute;inset:7px;border:2px solid #0c0f10;border-radius:8px;pointer-events:none}.ds-sign h3{margin:0 0 8px;font:700 2rem/1.04 \"Barlow Condensed\",\"Arial Narrow\",sans-serif}.ds-sign p{margin:0;color:#2f383c}"
+    },
+    {
+      "name": "Sign Tag",
+      "kind": "chip",
+      "refersTo": "sign-tag",
+      "description": "A short status with its verdict shape: green verified, yellow limit.",
+      "html": "<span class=\"ds-tag\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 56 56\" aria-hidden=\"true\"><rect x=\"4\" y=\"4\" width=\"48\" height=\"48\" rx=\"9\" fill=\"#0e7a55\"/><path d=\"M15 29l9 9 17-20\" fill=\"none\" stroke=\"#fff\" stroke-width=\"6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>211 tests, strict typing, CI</span> <span class=\"ds-tag ds-tag-warn\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 56 56\" aria-hidden=\"true\"><path d=\"M28 5L52 48H4z\" fill=\"#ffc20e\" stroke=\"#0c0f10\" stroke-width=\"4\" stroke-linejoin=\"round\"/><path d=\"M28 20v14\" stroke=\"#0c0f10\" stroke-width=\"6\" stroke-linecap=\"round\"/><circle cx=\"28\" cy=\"41\" r=\"2.8\" fill=\"#0c0f10\"/></svg>Pre-MVP: UI not built</span>",
+      "css": ".ds-tag{display:inline-flex;align-items:center;gap:8px;padding:5px 12px 5px 8px;border-radius:8px;background:#fbfcfb;color:#0c0f10;box-shadow:0 0 0 1.5px #8b9792;font:600 .875rem/1.3 \"Overpass Variable\",\"Helvetica Neue\",sans-serif}.ds-tag-warn{box-shadow:0 0 0 1.5px #0c0f10}"
+    },
+    {
+      "name": "Verdict Signs",
+      "kind": "custom",
+      "refersTo": "sign-panel",
+      "description": "The four verdict shapes: permitted, a human decision, caution, blocked. Colour never travels alone.",
+      "html": "<div class=\"ds-verdicts\"><figure><svg width=\"56\" height=\"56\" viewBox=\"0 0 56 56\" aria-hidden=\"true\"><rect x=\"4\" y=\"4\" width=\"48\" height=\"48\" rx=\"9\" fill=\"#0e7a55\"/><path d=\"M15 29l9 9 17-20\" fill=\"none\" stroke=\"#fff\" stroke-width=\"6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg><figcaption>Permitted</figcaption></figure><figure><svg width=\"56\" height=\"56\" viewBox=\"0 0 56 56\" aria-hidden=\"true\"><circle cx=\"28\" cy=\"28\" r=\"24\" fill=\"#0a59b5\"/><circle cx=\"28\" cy=\"20\" r=\"6\" fill=\"#fff\"/><path d=\"M15 42c0-8 5-13 13-13s13 5 13 13z\" fill=\"#fff\"/></svg><figcaption>Held</figcaption></figure><figure><svg width=\"56\" height=\"56\" viewBox=\"0 0 56 56\" aria-hidden=\"true\"><path d=\"M28 5L52 48H4z\" fill=\"#ffc20e\" stroke=\"#0c0f10\" stroke-width=\"4\" stroke-linejoin=\"round\"/><path d=\"M28 20v14\" stroke=\"#0c0f10\" stroke-width=\"6\" stroke-linecap=\"round\"/><circle cx=\"28\" cy=\"41\" r=\"2.8\" fill=\"#0c0f10\"/></svg><figcaption>Critical</figcaption></figure><figure><svg width=\"56\" height=\"56\" viewBox=\"0 0 56 56\" aria-hidden=\"true\"><circle cx=\"28\" cy=\"28\" r=\"22\" fill=\"#fff\"/><circle cx=\"28\" cy=\"28\" r=\"22\" fill=\"none\" stroke=\"#c8281e\" stroke-width=\"6\"/><path d=\"M13 13l30 30\" stroke=\"#c8281e\" stroke-width=\"6\" stroke-linecap=\"round\"/></svg><figcaption>Blocked</figcaption></figure></div>",
+      "css": ".ds-verdicts{display:flex;gap:24px;font:800 1.15rem \"Barlow Condensed\",\"Arial Narrow\",sans-serif;letter-spacing:.06em;text-transform:uppercase}.ds-verdicts figure{display:grid;justify-items:center;gap:8px;margin:0}.ds-verdicts figcaption{color:#0c0f10}"
+    },
+    {
+      "name": "Gate Sign",
+      "kind": "custom",
+      "refersTo": "sign-panel",
+      "description": "One pipeline stage: numeral plate, name, pictogram and its verdict, hung from a beam.",
+      "html": "<div class=\"ds-gate\"><div class=\"ds-gate__head\"><span class=\"ds-gate__num\">3</span><span class=\"ds-gate__name\">Risk</span></div><div class=\"ds-gate__state\"><svg width=\"50\" height=\"50\" viewBox=\"0 0 56 56\" aria-hidden=\"true\"><path d=\"M28 5L52 48H4z\" fill=\"#ffc20e\" stroke=\"#0c0f10\" stroke-width=\"4\" stroke-linejoin=\"round\"/><path d=\"M28 20v14\" stroke=\"#0c0f10\" stroke-width=\"6\" stroke-linecap=\"round\"/><circle cx=\"28\" cy=\"41\" r=\"2.8\" fill=\"#0c0f10\"/></svg><span class=\"ds-gate__tag\">Critical</span></div></div>",
+      "css": ".ds-gate{position:relative;display:grid;gap:10px;min-height:118px;width:190px;padding:14px;border-radius:14px;background:#fbfcfb;color:#0c0f10;box-shadow:0 1px 2px rgba(8,12,14,.14),0 16px 28px -18px rgba(8,12,14,.42),0 0 0 1px #d3dad7}.ds-gate::before{content:\"\";position:absolute;inset:7px;border:2px solid #0c0f10;border-radius:8px;pointer-events:none}.ds-gate__head{display:flex;align-items:center;gap:10px;font:700 1.15rem \"Barlow Condensed\",\"Arial Narrow\",sans-serif;letter-spacing:.06em;text-transform:uppercase}.ds-gate__num{display:grid;place-items:center;width:28px;height:28px;border-radius:6px;background:#0c0f10;color:#f3f6f4;font-weight:800}.ds-gate__state{display:flex;align-items:center;gap:10px;align-self:end;font:800 1.15rem \"Barlow Condensed\",\"Arial Narrow\",sans-serif;letter-spacing:.06em;text-transform:uppercase}"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "A plain white field with a heavy ink border; paths use the mono face.",
+      "html": "<label class=\"ds-field\"><span>Path</span><input type=\"text\" value=\"inbox/notes.txt\" spellcheck=\"false\"></label>",
+      "css": ".ds-field{display:grid;gap:6px;font:700 .875rem \"Overpass Variable\",\"Helvetica Neue\",sans-serif;color:#0c0f10}.ds-field input{min-height:44px;padding:8px 12px;border:2px solid #0c0f10;border-radius:10px;background:#fff;color:#0c0f10;font:400 .875rem \"Overpass Mono Variable\",ui-monospace,Menlo,monospace}.ds-field input:focus-visible{outline:3px solid #0a59b5;outline-offset:2px}"
+    },
+    {
+      "name": "Sign Band Link",
+      "kind": "nav",
+      "refersTo": "sign-band-link-current",
+      "description": "A destination on the sticky ink band; the followed one is a filled pill.",
+      "html": "<nav class=\"ds-band\"><a href=\"#\" class=\"ds-band__link\">Work</a><a href=\"#\" class=\"ds-band__link\" aria-current=\"true\">Gate demo</a><a href=\"#\" class=\"ds-band__link\">About</a></nav>",
+      "css": ".ds-band{display:flex;gap:2px;padding:8px;background:#0c0f10}.ds-band__link{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border-radius:8px;color:#f3f6f4;font:700 1.12rem \"Barlow Condensed\",\"Arial Narrow\",sans-serif;letter-spacing:.06em;text-decoration:none;text-transform:uppercase;transition:background-color 120ms cubic-bezier(.16,1,.3,1)}.ds-band__link:hover{background:rgba(255,255,255,.14)}.ds-band__link[aria-current=true]{background:#f3f6f4;color:#0c0f10}.ds-band__link:focus-visible{outline:3px solid #8dc0ff;outline-offset:3px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Site Gantry",
+    "overview": "The site is a site-entrance sign system. Panels hang from an overhead beam, and each one carries a single verdict in the grammar of safety signage: a green rounded square for permitted, a blue disc for a human decision, a yellow triangle for caution, a red ring and slash for blocked. Everything else is restraint: a cool reflective-white ground, near-black ink, heavy condensed capitals for headings, and a plain humanist sans for reading. Colour is never decoration; it is information.\n\nThe tone is that of a document you can check. Results sit beside their limits, unfinished work wears a barrier stripe, and nothing is shaded to look more finished than it is. The world is daylight by default (a hiring engineer skimming on a laptop between meetings) with a night variant in which the ground goes to asphalt and the signs stay lit, as reflective sheeting does under headlights.",
+    "keyCharacteristics": [
+      "Four signal colours, each locked to one meaning, used nowhere else.",
+      "Every verdict carries a shape and a word as well as a colour.",
+      "Sign faces stay reflective white in both themes; only the ground changes.",
+      "Heavy condensed signage capitals over a humanist highway sans; mono only for code and logs.",
+      "Signs hang from a beam; arrows sit in their own cell flush to the edge they point past.",
+      "Motion is one authored moment (signs hang into place) plus short state flips, each 300 ms or less."
+    ],
+    "rules": [
+      {
+        "name": "The One Meaning Rule",
+        "body": "Red, yellow, blue and green each carry one meaning and nothing else. A fifth colour, or one of these used for emphasis, breaks the system.",
+        "section": "colors"
+      },
+      {
+        "name": "The Shape-and-Word Rule",
+        "body": "No verdict is conveyed by colour alone. Each signal has a shape (square, disc, triangle, ring) and a short word beside it.",
+        "section": "colors"
+      },
+      {
+        "name": "The Reflective Face Rule",
+        "body": "A sign face stays light in both themes. The night theme changes the ground around the signs, never the signs.",
+        "section": "colors"
+      },
+      {
+        "name": "The Signage Capitals Rule",
+        "body": "Uppercase condensed is for things you press or that name a gate. Prose is sentence case.",
+        "section": "typography"
+      },
+      {
+        "name": "The Mono Is Data Rule",
+        "body": "Monospace appears only where the content is code, a path or a log line.",
+        "section": "typography"
+      },
+      {
+        "name": "The Edge-Locked Arrow Rule",
+        "body": "An arrow lives in its own cell against the edge it points past: the right edge of a button, the right edge of a mobile nav row.",
+        "section": "layout"
+      },
+      {
+        "name": "The Hang, Don't Float Rule",
+        "body": "A shadow implies the sign is hung from something. Nothing floats free of a beam, a band or a board.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** let a signal colour appear only with its meaning: blue for a decision or action, green for permitted or verified, yellow for a limit or work in progress, red for blocked.",
+      "**Do** pair every colour with its shape and a word.",
+      "**Do** put a caution sign and sentence beside every measured result.",
+      "**Do** keep sign faces light in both themes.",
+      "**Do** keep every motion at 300ms or less and collapse it under `prefers-reduced-motion`.",
+      "**Do** use the arrow cell, flush to the right edge, for every linking button."
+    ],
+    "donts": [
+      "**Don't** add a fifth accent colour or use a signal colour for emphasis.",
+      "**Don't** use hard-offset or flat block shadows, gradients on text, or glass effects.",
+      "**Don't** set monospace outside code, paths and logs.",
+      "**Don't** convey state by colour or motion alone.",
+      "**Don't** use warm cream grounds or a dark-with-neon scheme; the ground is cool and the signs are the light."
+    ]
+  }
+}
