@@ -1,0 +1,359 @@
+/* ───────── Case cards ───────── */
+.case-card {
+  display: grid;
+  gap: var(--s-5);
+  padding: clamp(24px, 3vw, 44px);
+}
+
+.case-card__plate {
+  display: grid;
+  place-items: center;
+  width: 88px;
+  height: 88px;
+  border: 3px solid var(--face-edge);
+  border-radius: 14px;
+  color: var(--face-ink);
+}
+
+.case-card--featured {
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--s-5) clamp(24px, 4vw, 56px);
+}
+
+.case-card--featured .case-card__plate {
+  width: 124px;
+  height: 124px;
+}
+
+.case-card__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--s-4);
+}
+
+.case-card__body > .btn {
+  margin-top: auto;
+}
+
+.case-card:not(.case-card--featured) {
+  grid-template-rows: auto 1fr;
+}
+
+.case-card h3 {
+  font-size: var(--step-3);
+}
+
+.case-card h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.case-card h3 a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 0.12em;
+}
+
+.case-card__headline {
+  font-size: var(--step-1);
+  font-weight: 650;
+  line-height: 1.35;
+  color: var(--face-ink);
+}
+
+.case-card__result {
+  display: grid;
+  gap: var(--s-2);
+  width: 100%;
+  max-width: 70ch;
+  padding: 14px 16px;
+  border: 1px solid var(--face-rule);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--face-ink) 4%, var(--face));
+}
+
+.case-card__result p {
+  max-width: none;
+  color: var(--face-ink);
+}
+
+.case-card__result .case-card__caveat {
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  font-size: var(--step--1);
+  color: var(--face-ink-2);
+}
+
+.case-card__caveat .state-sign {
+  margin-top: 2px;
+}
+
+.case-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2) var(--s-6);
+  font-size: var(--step--1);
+}
+
+.case-card__meta > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.case-card__meta dt {
+  font-weight: 700;
+}
+
+.case-card__meta dd {
+  margin: 0;
+  color: var(--face-ink-2);
+}
+
+.work-pair {
+  display: grid;
+  gap: var(--s-5);
+  margin-top: var(--s-5);
+}
+
+/* Both cards share one height; their buttons share one baseline. */
+.work-pair > .reveal {
+  display: flex;
+}
+
+.work-pair .case-card {
+  flex: 1;
+}
+
+@media (min-width: 960px) {
+  .work-pair {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .case-card--featured {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.repo-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ───────── In-progress board ───────── */
+.lab {
+  margin-top: var(--s-5);
+  overflow: hidden;
+}
+
+.lab::before {
+  display: none;
+}
+
+.lab .hazard {
+  display: block;
+}
+
+.lab__inner {
+  display: grid;
+  gap: var(--s-6);
+  padding: clamp(24px, 3vw, 44px);
+}
+
+.lab__head {
+  display: grid;
+  gap: var(--s-3);
+}
+
+@media (min-width: 900px) {
+  .lab__head {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    align-items: end;
+    gap: var(--s-7);
+  }
+}
+
+.lab__list {
+  border-top: 2px solid var(--face-edge);
+}
+
+.lab-row {
+  border-bottom: 1px solid var(--face-rule);
+}
+
+.lab-row__summary {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) auto 28px;
+  grid-template-areas:
+    'icon title period chev'
+    'icon status status chev';
+  gap: 6px var(--s-4);
+  align-items: center;
+  padding: var(--s-4) 0;
+  list-style: none;
+  cursor: pointer;
+}
+
+.lab-row__summary::-webkit-details-marker {
+  display: none;
+}
+
+.lab-row__summary:hover .lab-row__title {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.14em;
+}
+
+.lab-row__icon {
+  grid-area: icon;
+  color: var(--face-ink);
+}
+
+.lab-row__title {
+  grid-area: title;
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.lab-row__status {
+  grid-area: status;
+}
+
+.lab-row__period {
+  grid-area: period;
+  color: var(--face-ink-2);
+  font-size: var(--step--1);
+  white-space: nowrap;
+}
+
+.lab-row__chevron {
+  grid-area: chev;
+  justify-self: end;
+  transform: rotate(90deg);
+  transition: transform var(--dur-2) var(--ease-out);
+}
+
+.lab-row[open] .lab-row__chevron {
+  transform: rotate(-90deg);
+}
+
+.lab-row__body {
+  display: grid;
+  gap: var(--s-5);
+  padding: var(--s-1) 0 var(--s-7);
+}
+
+@media (min-width: 800px) {
+  .lab-row__body {
+    padding-left: 56px;
+  }
+}
+
+.lab-row__body h4 {
+  margin-bottom: var(--s-2);
+}
+
+.lab-row__question {
+  font-size: var(--step-1);
+  line-height: 1.45;
+  color: var(--face-ink);
+}
+
+.lab-row__cols {
+  display: grid;
+  gap: var(--s-5) var(--s-7);
+}
+
+@media (min-width: 800px) {
+  .lab-row__cols {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.mark-list {
+  display: grid;
+  gap: 10px;
+}
+
+.mark-list li {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+}
+
+.mark-list .state-sign {
+  margin-top: 4px;
+}
+
+.lab-row__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-2) var(--s-5);
+  max-width: none;
+  color: var(--face-ink-2);
+  font-size: var(--step--1);
+}
+
+/* ───────── Results tables ───────── */
+.table-wrap {
+  overflow-x: auto;
+}
+
+.results {
+  width: 100%;
+  font-size: var(--step--1);
+}
+
+.results caption {
+  padding-bottom: 10px;
+  caption-side: top;
+  font-size: var(--step-0);
+  font-weight: 700;
+  text-align: left;
+}
+
+.results th,
+.results td {
+  padding: 10px 14px 10px 0;
+  border-bottom: 1px solid var(--face-rule, var(--rule));
+  text-align: left;
+  vertical-align: top;
+}
+
+.results thead th {
+  border-bottom: 2px solid currentColor;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.results tbody th {
+  font-weight: 600;
+}
+
+/* ───────── Hero links ───────── */
+.hero__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2) var(--s-5);
+  font-weight: 600;
+}
+
+.hero__links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 32px;
+}

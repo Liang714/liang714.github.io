@@ -1,0 +1,500 @@
+/* The gantry on the dark board needs a light beam. */
+.band--board .gantry__beam,
+.band--board .gantry__rod,
+.band--board .gate::after {
+  background: var(--board-ink);
+}
+
+.demo__intro {
+  display: grid;
+  gap: var(--s-4);
+  justify-items: start;
+}
+
+.workbench {
+  display: grid;
+  gap: var(--s-6);
+  margin-top: var(--s-7);
+}
+
+.demo__pair {
+  display: grid;
+  gap: var(--s-5);
+  align-items: start;
+}
+
+@media (min-width: 960px) {
+  .demo__pair {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* The trace is prose; the ledger is a table and needs the wider column. */
+  .demo__pair--trace {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  }
+}
+
+.demo__run {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+}
+
+.demo__send {
+  min-height: 52px;
+  padding-inline: 26px;
+  font-size: 1.2rem;
+}
+
+.demo__gantry {
+  margin-top: var(--s-2);
+}
+
+.demo__lesson {
+  display: grid;
+  gap: var(--s-2);
+  max-width: 78ch;
+}
+
+.demo__lesson p {
+  max-width: none;
+}
+
+.demo__evidence {
+  font-size: var(--step--1);
+  color: var(--board-ink-2);
+}
+
+/* ───────── Scenario picker ───────── */
+.picker {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.picker__legend {
+  margin-bottom: var(--s-4);
+  padding: 0;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.picker__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(262px, 1fr));
+  gap: var(--s-3);
+}
+
+.picker__option {
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+
+.picker__option input {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.picker__card {
+  display: grid;
+  gap: 4px;
+  min-height: 96px;
+  padding: 14px 44px 14px 16px;
+  border-radius: 12px;
+  transition: transform var(--dur-1) var(--ease-out);
+}
+
+.picker__card::before {
+  inset: 5px;
+  border-width: 1.5px;
+  border-radius: 8px;
+  opacity: 0.4;
+}
+
+.picker__option:hover .picker__card {
+  transform: translateY(-2px);
+}
+
+.picker__option input:checked + .picker__card {
+  box-shadow:
+    0 0 0 3px var(--focus-on-dark),
+    var(--shadow-sign);
+}
+
+.picker__option input:checked + .picker__card::before {
+  border-width: 2.5px;
+  opacity: 1;
+}
+
+.picker__option input:focus-visible + .picker__card {
+  outline: 3px solid var(--focus-on-dark);
+  outline-offset: 4px;
+}
+
+.picker__title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.picker__blurb {
+  font-size: var(--step--1);
+  line-height: 1.35;
+  color: var(--face-ink-2);
+}
+
+.picker__selected {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+/* ───────── Panels ───────── */
+.panel {
+  display: grid;
+  gap: var(--s-4);
+  align-content: start;
+  padding: clamp(22px, 2.6vw, 34px);
+}
+
+.panel__title {
+  font-size: var(--step-2);
+}
+
+.panel__label {
+  margin-bottom: 6px;
+  font-size: var(--step--1);
+  font-weight: 700;
+  color: var(--face-ink);
+}
+
+.panel__intent {
+  margin-top: var(--s-2);
+  font-size: var(--step--1);
+}
+
+.panel__facts {
+  display: grid;
+}
+
+.panel__facts > div {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: var(--s-3);
+  padding: 8px 0;
+  border-bottom: 1px solid var(--face-rule);
+}
+
+.panel__facts dt {
+  font-weight: 700;
+  font-size: var(--step--1);
+}
+
+.panel__facts dd {
+  margin: 0;
+  font-size: var(--step--1);
+  color: var(--face-ink-2);
+}
+
+.code {
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #0c0f10;
+  color: #e9efec;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  white-space: pre;
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.code--fence {
+  box-shadow: inset 0 0 0 1.5px rgb(255 194 14 / 0.75);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.code--console {
+  min-height: 3.6em;
+  margin-top: var(--s-5);
+  white-space: pre-wrap;
+}
+
+.code:focus-visible {
+  outline-color: var(--blue);
+}
+
+/* ───────── Form fields ───────── */
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+.field label {
+  font-size: var(--step--1);
+  font-weight: 700;
+}
+
+.field__hint {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--face-ink-2);
+}
+
+.field--check {
+  grid-template-columns: 24px minmax(0, 1fr);
+  align-items: start;
+  gap: var(--s-3);
+}
+
+.field--check input {
+  width: 22px;
+  height: 22px;
+  margin: 2px 0 0;
+}
+
+.field--check label {
+  display: grid;
+  gap: 4px;
+}
+
+.input {
+  width: 100%;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 2px solid var(--face-edge);
+  border-radius: var(--r-field);
+  background: #ffffff;
+  color: #0c0f10;
+  font: inherit;
+  font-size: var(--step--1);
+}
+
+input.input[type='text'] {
+  font-family: var(--font-mono);
+}
+
+.input:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 2px;
+}
+
+/* ───────── Rules ───────── */
+.rules__summary {
+  display: grid;
+  gap: 4px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.rules__summary::-webkit-details-marker {
+  display: none;
+}
+
+.rules__hint {
+  font-size: var(--step--1);
+  color: var(--face-ink-2);
+}
+
+.rules[open] .rules__summary {
+  margin-bottom: var(--s-4);
+}
+
+.rules__grid {
+  display: grid;
+  gap: var(--s-4);
+  margin-bottom: var(--s-4);
+}
+
+@media (min-width: 640px) {
+  .rules__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ───────── Trace ───────── */
+.trace__list {
+  display: grid;
+  gap: var(--s-4);
+}
+
+.trace__row {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr);
+  gap: var(--s-3);
+  animation: fade-in var(--dur-2) var(--ease-out) both;
+}
+
+.trace__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px var(--s-3);
+  max-width: none;
+  color: var(--face-ink);
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.trace__tag {
+  padding: 1px 8px;
+  border-radius: 5px;
+  background: #0c0f10;
+  color: #f3f6f4;
+  font-size: 0.9rem;
+}
+
+.trace__source {
+  color: var(--face-ink-2);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.trace__headline {
+  max-width: none;
+  color: var(--face-ink);
+  font-weight: 650;
+}
+
+.trace__detail {
+  max-width: none;
+  font-size: var(--step--1);
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.approval {
+  display: grid;
+  gap: var(--s-3);
+  padding: var(--s-4);
+  border: 2px solid var(--blue);
+  border-radius: 12px;
+}
+
+.approval h4 {
+  font-size: var(--step-1);
+  color: var(--face-ink);
+}
+
+.outcome {
+  display: grid;
+  gap: var(--s-3);
+  padding-top: var(--s-4);
+  border-top: 2px solid var(--face-edge);
+}
+
+.outcome h4 {
+  font-size: var(--step-1);
+  line-height: 1.3;
+  color: var(--face-ink);
+}
+
+.outcome__effects {
+  display: grid;
+  gap: 6px;
+  font-size: var(--step--1);
+}
+
+.outcome__effects code {
+  font-size: 0.75rem;
+  word-break: break-word;
+}
+
+/* ───────── Ledger ───────── */
+.ledger code {
+  font-size: 0.75rem;
+  word-break: break-word;
+}
+
+.ledger th,
+.ledger td {
+  padding-right: 10px;
+}
+
+/* Names and trust levels never break mid-word; only the payload wraps. */
+.ledger tbody th code,
+.ledger tbody td:nth-child(3) code {
+  white-space: nowrap;
+}
+
+.ledger tbody td:last-child code {
+  overflow-wrap: anywhere;
+}
+
+.ledger thead th {
+  white-space: nowrap;
+}
+
+/* ───────── Red team ───────── */
+.redteam {
+  display: grid;
+  gap: var(--s-6);
+}
+
+@media (min-width: 800px) {
+  .redteam {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--s-7);
+  }
+}
+
+.redteam__block {
+  display: grid;
+  gap: var(--s-3);
+  align-content: start;
+}
+
+.redteam__text {
+  font-size: var(--step--1);
+}
+
+.redteam__block .chip-btn {
+  justify-self: start;
+}
+
+.redteam__selects {
+  display: grid;
+  gap: var(--s-3);
+}
+
+@media (min-width: 560px) {
+  .redteam__block .chip-btn {
+  justify-self: start;
+}
+
+.redteam__selects {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

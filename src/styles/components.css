@@ -1,0 +1,547 @@
+/* ───────── Sign panel: reflective face, inset border, hung from a beam ───────── */
+.sign {
+  position: relative;
+  background: var(--face);
+  color: var(--face-ink);
+  border-radius: var(--r-sign);
+  box-shadow: var(--shadow-sign), 0 0 0 1px var(--face-rule);
+}
+
+.sign::before {
+  content: '';
+  position: absolute;
+  inset: 7px;
+  border: 2px solid var(--face-edge);
+  border-radius: calc(var(--r-sign) - 6px);
+  pointer-events: none;
+}
+
+.sign a {
+  color: var(--blue);
+}
+
+.sign p {
+  color: var(--face-ink-2);
+}
+
+/* The black plate that names a sign. Declared with .sign so sign body text colour never overrides it. */
+.strap,
+.sign .strap {
+  display: inline-block;
+  padding: 5px 14px 4px;
+  border-radius: 6px;
+  background: #0c0f10;
+  color: #f3f6f4;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.09em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+/* ───────── State signs (ISO-style verdict shapes) ───────── */
+.state-sign {
+  flex: none;
+  overflow: visible;
+}
+
+.state-sign__mark {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.state-sign__mark-fill {
+  fill: #fff;
+}
+
+.state-sign--permitted .state-sign__fill {
+  fill: var(--green);
+}
+
+.state-sign--approval .state-sign__fill {
+  fill: var(--blue);
+}
+
+.state-sign--caution .state-sign__fill {
+  fill: var(--yellow);
+  stroke: #0c0f10;
+  stroke-width: 4;
+  stroke-linejoin: round;
+}
+
+.state-sign--caution .state-sign__mark {
+  stroke: #0c0f10;
+}
+
+.state-sign--caution .state-sign__mark-fill {
+  fill: #0c0f10;
+}
+
+.state-sign__face {
+  fill: #fff;
+}
+
+.state-sign__ring {
+  fill: none;
+  stroke: var(--red);
+  stroke-width: 6;
+}
+
+.state-sign__slash {
+  stroke: var(--red);
+  stroke-width: 6;
+  stroke-linecap: round;
+}
+
+.state-sign__outline {
+  fill: none;
+  stroke: var(--face-ink-2);
+  stroke-width: 2.5;
+  stroke-dasharray: 5 4;
+  opacity: 0.6;
+}
+
+.state-sign__dash {
+  stroke: var(--face-ink-2);
+  stroke-width: 3;
+  stroke-linecap: round;
+  opacity: 0.6;
+}
+
+.state-sign__dots {
+  fill: none;
+  stroke: var(--face-ink-2);
+  stroke-width: 2.5;
+  stroke-dasharray: 2 6;
+  stroke-linecap: round;
+  opacity: 0.5;
+}
+
+/* ───────── Tags ───────── */
+.sign-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+
+.sign-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 12px 5px 8px;
+  border-radius: var(--r-chip);
+  background: var(--face);
+  color: var(--face-ink);
+  box-shadow: 0 0 0 1.5px var(--rule-strong);
+  font-size: var(--step--1);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.sign-tag--yellow {
+  box-shadow: 0 0 0 1.5px #0c0f10;
+}
+
+/* ───────── Buttons ───────── */
+.btn {
+  --btn-bg: var(--blue);
+  --btn-ink: var(--on-blue);
+  --btn-edge: var(--blue);
+  display: inline-grid;
+  grid-auto-flow: column;
+  align-items: stretch;
+  min-height: 52px;
+  overflow: hidden;
+  border: 2px solid var(--btn-edge);
+  border-radius: 10px;
+  background: var(--btn-bg);
+  color: var(--btn-ink);
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    transform var(--dur-1) var(--ease-out),
+    box-shadow var(--dur-2) var(--ease-out);
+}
+
+.sign .btn,
+.sign .btn:hover {
+  color: var(--btn-ink);
+}
+
+.btn--secondary {
+  --btn-bg: var(--face);
+  --btn-ink: var(--face-ink);
+  --btn-edge: var(--face-edge);
+}
+
+.btn--quiet {
+  --btn-bg: transparent;
+  --btn-ink: var(--ink);
+  --btn-edge: var(--ink);
+}
+
+.band--board .btn--quiet {
+  --btn-ink: var(--board-ink);
+  --btn-edge: var(--board-ink);
+}
+
+.btn__label {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.btn__arrow {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  border-left: 2px solid color-mix(in srgb, currentColor 38%, transparent);
+  background: color-mix(in srgb, currentColor 12%, transparent);
+}
+
+.btn__arrow .pictogram {
+  transition: transform var(--dur-2) var(--ease-out);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sign);
+}
+
+.btn:hover .btn__arrow .pictogram {
+  transform: translateX(3px);
+}
+
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+}
+
+/* Small in-flow action (approve, decline, run). */
+.chip-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  min-height: 44px;
+  padding: 0 18px;
+  border: 2px solid var(--chip-edge, var(--ink));
+  border-radius: var(--r-chip);
+  background: var(--chip-bg, transparent);
+  color: var(--chip-ink, var(--ink));
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    transform var(--dur-1) var(--ease-out),
+    background-color var(--dur-1) var(--ease-out);
+}
+
+.chip-btn:hover {
+  transform: translateY(-1px);
+}
+
+.chip-btn:active {
+  transform: translateY(1px);
+}
+
+.chip-btn[aria-pressed='true'] {
+  --chip-bg: var(--ink);
+  --chip-ink: var(--sheet);
+}
+
+.chip-btn--blue {
+  --chip-bg: var(--blue);
+  --chip-ink: var(--on-blue);
+  --chip-edge: var(--blue);
+}
+
+.chip-btn--plain {
+  --chip-bg: var(--face);
+  --chip-ink: var(--face-ink);
+  --chip-edge: var(--face-edge);
+}
+
+.chip-btn[disabled] {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ───────── Sticky sign band (navigation) ───────── */
+.sign-band {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--band);
+  color: var(--band-ink);
+  border-bottom: 1px solid rgb(255 255 255 / 0.1);
+}
+
+.sign-band__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+  min-height: 62px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: inherit;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.brand__role {
+  display: none;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  opacity: 0.72;
+}
+
+.sign-band__nav {
+  display: none;
+  margin-left: auto;
+}
+
+.sign-band__list {
+  display: flex;
+  gap: 2px;
+}
+
+.sign-band__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 0 14px;
+  border-radius: 8px;
+  color: inherit;
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color var(--dur-1) var(--ease-out);
+}
+
+.sign-band__link:hover {
+  background: rgb(255 255 255 / 0.14);
+}
+
+.sign-band__link[aria-current='true'] {
+  background: var(--band-ink);
+  color: var(--band);
+}
+
+.sign-band__tools {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  margin-left: auto;
+}
+
+.band-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 2px solid rgb(255 255 255 / 0.4);
+  border-radius: 8px;
+  background: transparent;
+  color: inherit;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color var(--dur-1) var(--ease-out);
+}
+
+.band-btn:hover {
+  background: rgb(255 255 255 / 0.14);
+}
+
+.band-btn[aria-pressed='true'] {
+  background: var(--band-ink);
+  color: var(--band);
+}
+
+.sign-band__menu-btn {
+  display: inline-flex;
+}
+
+.sign-band__panel {
+  border-top: 1px solid rgb(255 255 255 / 0.12);
+  padding-block: var(--s-2) var(--s-4);
+}
+
+.sign-band__panel .sign-band__link {
+  width: 100%;
+  min-height: 54px;
+  justify-content: space-between;
+  border-radius: 0;
+  border-bottom: 1px solid rgb(255 255 255 / 0.1);
+  font-size: 1.3rem;
+}
+
+@media (min-width: 640px) {
+  .brand__role {
+    display: inline;
+  }
+}
+
+@media (min-width: 1000px) {
+  .sign-band__nav {
+    display: block;
+  }
+
+  .sign-band__tools {
+    margin-left: var(--s-3);
+  }
+
+  .sign-band__menu-btn {
+    display: none;
+  }
+}
+
+/* ───────── Footer ───────── */
+.site-footer {
+  background: var(--band);
+  color: var(--band-ink);
+  padding-block: var(--s-8) var(--s-6);
+}
+
+.site-footer a {
+  color: inherit;
+}
+
+.site-footer__grid {
+  display: grid;
+  gap: var(--s-7);
+}
+
+.site-footer__name {
+  font-family: var(--font-display);
+  font-size: var(--step-3);
+  font-weight: 800;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.site-footer__role {
+  margin-top: var(--s-2);
+  color: rgb(243 246 244 / 0.72);
+}
+
+.site-footer__links {
+  display: grid;
+  gap: var(--s-2);
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.site-footer__links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 36px;
+  text-decoration: none;
+}
+
+.site-footer__links a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+.site-footer__small {
+  margin-top: var(--s-8);
+  padding-top: var(--s-5);
+  border-top: 1px solid rgb(255 255 255 / 0.14);
+  color: rgb(243 246 244 / 0.7);
+  font-size: var(--step--1);
+  max-width: none;
+}
+
+@media (min-width: 800px) {
+  .site-footer__grid {
+    grid-template-columns: 1.4fr 1fr 1fr;
+  }
+}
+
+/* ───────── Reveal (signs hang into place; content is visible without JavaScript) ───────── */
+.js-reveal .reveal:not(.is-visible) {
+  opacity: 0;
+  transform: translateY(-14px);
+}
+
+.reveal {
+  transition:
+    opacity var(--dur-3) var(--ease-out),
+    transform var(--dur-3) var(--ease-out);
+}
+
+@media (prefers-reduced-motion: reduce), print {
+  .js-reveal .reveal:not(.is-visible) {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ───────── Pictogram ───────── */
+.pictogram {
+  flex: none;
+}
+
+/* ───────── Caution list: limits travel with results ───────── */
+.caution-list {
+  display: grid;
+  gap: var(--s-3);
+}
+
+.caution-list li {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
+  gap: var(--s-3);
+  align-items: start;
+}
+
+.caution-list .state-sign {
+  margin-top: 4px;
+}
+
+.caution-list p {
+  color: inherit;
+  max-width: 70ch;
+}

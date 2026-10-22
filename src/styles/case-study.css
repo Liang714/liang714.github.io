@@ -1,0 +1,400 @@
+.case-hero {
+  padding-block: var(--s-5) var(--s-7);
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  margin-bottom: var(--s-3);
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.back-link__icon {
+  transform: rotate(180deg);
+  transition: transform var(--dur-2) var(--ease-out);
+}
+
+.back-link:hover .back-link__icon {
+  transform: rotate(180deg) translateX(3px);
+}
+
+.case-hero__panel {
+  display: grid;
+  gap: var(--s-5);
+  padding: clamp(26px, 3.6vw, 56px);
+}
+
+.case-hero__title {
+  display: flex;
+  align-items: center;
+  gap: var(--s-5);
+}
+
+.case-hero__plate {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  border: 3px solid var(--face-edge);
+  border-radius: 14px;
+  color: var(--face-ink);
+}
+
+.case-hero h1 {
+  color: var(--face-ink);
+  font-size: var(--step-4);
+}
+
+.case-hero__headline {
+  max-width: 30ch;
+  color: var(--face-ink);
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.case-hero__result {
+  max-width: 78ch;
+}
+
+.case-facts {
+  display: grid;
+  gap: var(--s-3) var(--s-6);
+  font-size: var(--step--1);
+}
+
+@media (min-width: 760px) {
+  .case-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.case-facts > div {
+  display: grid;
+  grid-template-columns: 84px minmax(0, 1fr);
+  gap: var(--s-3);
+  padding-bottom: var(--s-2);
+  border-bottom: 1px solid var(--face-rule);
+}
+
+.case-facts dt {
+  font-weight: 700;
+}
+
+.case-facts dd {
+  margin: 0;
+  color: var(--face-ink-2);
+}
+
+/* ───────── Reading layout ───────── */
+.case-layout {
+  display: grid;
+  gap: var(--s-7);
+  padding-bottom: var(--s-9);
+}
+
+@media (min-width: 1100px) {
+  .case-layout {
+    grid-template-columns: 200px minmax(0, 1fr);
+    gap: clamp(48px, 6vw, 96px);
+    align-items: start;
+  }
+}
+
+.case-toc {
+  position: sticky;
+  top: 84px;
+  align-self: start;
+}
+
+.case-toc ol {
+  display: grid;
+  gap: 2px;
+  padding-left: 0;
+  counter-reset: toc;
+}
+
+.case-toc a {
+  display: block;
+  padding: 8px 0 8px 14px;
+  color: var(--ink-2);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--rule);
+}
+
+.case-toc a:hover {
+  color: var(--ink);
+  background: var(--sheet-2);
+}
+
+@media (max-width: 1099px) {
+  .case-toc {
+    position: static;
+    padding-block: var(--s-4);
+    border-block: 2px solid var(--ink);
+  }
+
+  .case-toc ol {
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 0 var(--s-5);
+  }
+}
+
+.case-body {
+  display: grid;
+  gap: clamp(56px, 8vw, 96px);
+  min-width: 0;
+}
+
+.case-body section {
+  display: grid;
+  gap: var(--s-5);
+  align-content: start;
+  min-width: 0;
+}
+
+.case-body h2 {
+  padding-top: var(--s-4);
+  border-top: 2px solid var(--ink);
+}
+
+.case-body h3 {
+  margin-top: var(--s-4);
+}
+
+.case-body p {
+  max-width: var(--measure);
+}
+
+.mark-list--body {
+  gap: var(--s-4);
+  max-width: var(--measure);
+}
+
+.mark-list--body li {
+  grid-template-columns: 22px minmax(0, 1fr);
+  gap: var(--s-3);
+}
+
+.mark-list--body .state-sign {
+  margin-top: 5px;
+}
+
+.fact-list {
+  display: grid;
+  max-width: var(--measure);
+  margin-top: var(--s-4);
+  border-top: 1px solid var(--rule-strong);
+}
+
+.fact-list > div {
+  display: grid;
+  gap: 2px var(--s-5);
+  padding: var(--s-3) 0;
+  border-bottom: 1px solid var(--rule-strong);
+}
+
+@media (min-width: 640px) {
+  .fact-list > div {
+    grid-template-columns: 150px minmax(0, 1fr);
+  }
+}
+
+.fact-list dt {
+  font-weight: 700;
+}
+
+.fact-list dd {
+  margin: 0;
+  color: var(--ink-2);
+}
+
+.notes {
+  display: grid;
+  gap: var(--s-5);
+  max-width: var(--measure);
+}
+
+.notes dt {
+  margin-bottom: 4px;
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  font-weight: 700;
+  line-height: 1.08;
+}
+
+.notes dd {
+  margin: 0;
+  color: var(--ink-2);
+}
+
+.provenance {
+  display: grid;
+  gap: var(--s-3);
+  padding-top: var(--s-4);
+  border-top: 2px solid var(--ink);
+  color: var(--ink-2);
+}
+
+.provenance h2 {
+  padding: 0;
+  border: 0;
+  font-size: var(--step-2);
+  color: var(--ink);
+}
+
+.case-next {
+  display: grid;
+  gap: var(--s-3);
+  justify-items: start;
+}
+
+/* ───────── Results on the sheet (outside a sign) ───────── */
+.case-body .results th,
+.case-body .results td {
+  border-bottom-color: var(--rule-strong);
+}
+
+.case-body .results caption {
+  color: var(--ink);
+}
+
+/* ───────── Diagrams ───────── */
+.diagram {
+  display: grid;
+  gap: var(--s-3);
+  margin: 0;
+}
+
+.diagram__scroll {
+  overflow-x: auto;
+  border: 1px solid var(--rule-strong);
+  border-radius: 12px;
+  background: var(--sheet-2);
+}
+
+.diagram__svg {
+  display: block;
+  width: 100%;
+  min-width: 880px;
+  height: auto;
+}
+
+.diagram figcaption {
+  color: var(--ink-2);
+  font-size: var(--step--1);
+}
+
+.diagram__text summary {
+  cursor: pointer;
+  font-weight: 650;
+}
+
+.diagram__text ol {
+  display: grid;
+  gap: var(--s-2);
+  max-width: var(--measure);
+  margin-top: var(--s-3);
+  padding-left: 1.4em;
+  list-style: decimal;
+  color: var(--ink-2);
+}
+
+.dg-group rect {
+  fill: none;
+  stroke: var(--rule-strong);
+  stroke-width: 1.5;
+  stroke-dasharray: 6 5;
+}
+
+.dg-group text {
+  fill: var(--ink-2);
+  font-family: var(--font-text);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.dg-edge path {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+
+.dg-edge--dashed path {
+  stroke-dasharray: 5 4;
+}
+
+.dg-arrowhead {
+  fill: var(--ink);
+}
+
+.dg-edge-label {
+  fill: var(--ink);
+  font-family: var(--font-text);
+  font-size: 12px;
+  font-weight: 650;
+  paint-order: stroke;
+  stroke: var(--sheet-2);
+  stroke-width: 5;
+  stroke-linejoin: round;
+}
+
+.dg-node rect {
+  fill: var(--face);
+  stroke: var(--face-edge);
+  stroke-width: 2;
+}
+
+.dg-node--green rect {
+  stroke: var(--green);
+  stroke-width: 3;
+}
+
+.dg-node--yellow rect {
+  stroke: #0c0f10;
+  stroke-width: 2.5;
+}
+
+.dg-node--blue rect {
+  stroke: var(--blue);
+  stroke-width: 3;
+}
+
+.dg-node--red rect {
+  stroke: var(--red);
+  stroke-width: 3;
+}
+
+.dg-node--dashed rect {
+  stroke-dasharray: 6 4;
+}
+
+.dg-title {
+  fill: var(--face-ink);
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.dg-sub {
+  fill: var(--face-ink-2);
+  font-family: var(--font-text);
+  font-size: 12px;
+}
