@@ -1,0 +1,23 @@
+node_modules
+dist
+dist-ssr
+*.local
+.DS_Store
+*.log
+coverage
+.vite
+.env
+.env.*
+!.env.example
+# local design-tool state (the committed record is PRODUCT.md and DESIGN.md)
+.impeccable/review
+.impeccable/mocks
+.impeccable/build
+.impeccable/live
+
+# local tool config
+.claude/
+scripts/.og-preview.svg
+
+# reference material supplied by the owner, not part of the site
+AI Portfolio Website Design Brief.md
