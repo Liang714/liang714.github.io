@@ -49,7 +49,8 @@ export function SiteHeader() {
       <div className="wrap sign-band__inner">
         <Link className="brand" to="/" onClick={() => setMenuOpen(false)}>
           <LogoMark />
-          <span>{site.name}</span>
+          <span className="brand__full">{site.name}</span>
+          <span className="brand__short">{site.shortName}</span>
           <span className="brand__role">{site.role}</span>
         </Link>
 

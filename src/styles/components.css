@@ -316,6 +316,10 @@
   text-transform: uppercase;
 }
 
+.brand__short {
+  display: none;
+}
+
 .brand__role {
   display: none;
   font-size: 1rem;
@@ -413,6 +417,16 @@
   font-size: 1.3rem;
 }
 
+@media (max-width: 419px) {
+  .brand__full {
+    display: none;
+  }
+
+  .brand__short {
+    display: inline;
+  }
+}
+
 @media (min-width: 640px) {
   .brand__role {
     display: inline;
@@ -460,6 +474,10 @@
 .site-footer__role {
   margin-top: var(--s-2);
   color: rgb(243 246 244 / 0.72);
+}
+
+.site-footer__sep {
+  margin-inline: 0.6em;
 }
 
 .site-footer__links {

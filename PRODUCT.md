@@ -45,8 +45,9 @@ The civil-engineering background (checks, safety factors, load paths, records) i
 ## Capabilities and Constraints
 
 - Static site, no server. Contact is `mailto:` and external links; no form that silently discards messages.
-- Owner details live in one config file. Unfilled placeholders: full name *(inferred display name "Liang")*, email,
-  LinkedIn, résumé file, education dates, per-project contribution statements, wording about AI-assisted development.
+- Owner details live in one config file. Email and LinkedIn were supplied by the owner and are published on the site.
+  Still unfilled: résumé file, education dates, per-project contribution statements, approval of the wording about
+  AI-assisted development.
 - Verified: the ROBIN README's citation (arXiv:2604.14725, RELOAD, Lee, Sim, Kim, Li, Zhu and Park) matches arXiv's record.
 - Terminology: "capability broker", "trust lattice", "audit log" are the agent project's own terms.
 - Target: WCAG 2.2 AA, `prefers-reduced-motion` honoured, keyboard-operable playground, works under a GitHub Pages
@@ -59,7 +60,7 @@ The civil-engineering background (checks, safety factors, load paths, records) i
   professional experience across Malaysia, Taiwan and South Korea.
 - Binding bans from the brief: no purple-gradient/glow/floating-particle AI look, no skill-percentage bars, no
   invented testimonials, metrics, awards, employers, publications, user counts or production deployments.
-- Name shown: "Liang" *(inferred from the GitHub handle and local account; full name to be supplied)*.
+- Name shown: "Erh Fwu Liang" (confirmed by the owner). The narrow phone header shows "Liang" so it fits.
 
 ## Evidence on Hand
 

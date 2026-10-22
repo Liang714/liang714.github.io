@@ -1,4 +1,4 @@
-# Liang — AI engineer portfolio
+# Erh Fwu Liang — AI engineer portfolio
 
 A static portfolio site: React, TypeScript and Vite, deployed to GitHub Pages.
 

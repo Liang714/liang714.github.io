@@ -13,7 +13,11 @@ export function SiteFooter() {
             <p className="site-footer__role">
               {site.identity.split(' | ').map((part, index) => (
                 <span key={part}>
-                  {index > 0 && <span aria-hidden="true">{'\u00a0·\u00a0'}</span>}
+                  {index > 0 && (
+                    <span className="site-footer__sep" aria-hidden="true">
+                      ·
+                    </span>
+                  )}
                   {part}
                 </span>
               ))}

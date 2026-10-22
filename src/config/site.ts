@@ -11,8 +11,10 @@ export interface NavItem {
 }
 
 export interface SiteConfig {
-  /** Display name. PLACEHOLDER: "Liang" comes from the GitHub handle; replace with the full name. */
+  /** Full display name, used in titles, the footer, the share image and structured data. */
   readonly name: string
+  /** Short form for the narrow phone header only, where the full name would not fit. */
+  readonly shortName: string
   readonly role: string
   /** The role as it reads mid-sentence, with the right capitalisation: "an AI engineer". */
   readonly roleSentence: string
@@ -43,17 +45,18 @@ export interface SiteConfig {
 }
 
 export const site: SiteConfig = {
-  name: 'Liang',
+  name: 'Erh Fwu Liang',
+  shortName: 'Liang',
   role: 'AI Engineer',
   roleSentence: 'an AI engineer',
   identity: 'Software Engineer | Applied AI | Intelligent Systems',
-  title: 'Liang — AI Engineer',
+  title: 'Erh Fwu Liang — AI Engineer',
   description:
-    'Liang is an AI engineer building gated, auditable agent systems and applied-AI products. Case studies, an interactive safety-gate simulator, and the evidence and limits behind each claim.',
+    'Erh Fwu Liang is an AI engineer building gated, auditable agent systems and applied-AI products. Case studies, an interactive safety-gate simulator, and the evidence and limits behind each claim.',
   url: 'https://liang714.github.io/',
-  email: '',
+  email: 'erhfwuliang@live.com',
   github: 'https://github.com/Liang714',
-  linkedin: '',
+  linkedin: 'https://www.linkedin.com/in/liang714',
   resume: '',
   portrait: '',
   portraitAlt: '',
@@ -68,7 +71,7 @@ export const site: SiteConfig = {
     { id: 'contact', label: 'Contact' },
   ],
   confirmed: {
-    fullName: false,
+    fullName: true,
     aboutCopy: false,
     aiAssistanceWording: false,
     educationDates: false,
