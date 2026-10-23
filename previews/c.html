@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Preview C: Plain grid</title>
+  <link rel="icon" href="data:," />
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="stylesheet" href="./c.css" />
+  <script type="module" src="./c.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="bar">
+    <div class="bar__in">
+      <a class="brand" href="#top">Erh Fwu Liang</a>
+      <nav aria-label="Primary"><ul><li><a data-nav href="#projects">Projects</a></li><li><a data-nav href="#stack">Stack</a></li><li><a data-nav href="#record">Record</a></li><li><a data-nav href="#contact">Contact</a></li></ul></nav>
+    </div>
+    <span class="progress" aria-hidden="true"></span>
+  </header>
+
+  <main id="main">
+    <section id="top" class="sec hero" tabindex="-1">
+      <div class="sec__side"><p class="who"><strong>Erh Fwu Liang</strong>AI Engineer, currently a student</p></div>
+      <div class="sec__body">
+        <h1>Intelligent systems, built to be checked.</h1>
+        <div class="hero__cols">
+          <div>
+            <p class="lede">I trained as a civil engineer at National Taiwan University, where the first question is always what has to hold, and how you will know. I am now a student moving that habit into AI: agents with safety gates, honest evaluation, and products that get finished.</p>
+            <p class="actions"><a class="textlink" href="#projects">See my projects <svg viewBox="0 0 48 48" width="18" height="18" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 24h34M27 11l13 13-13 13"/></svg></a><a class="textlink" href="/#about">More about me <svg viewBox="0 0 48 48" width="18" height="18" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 24h34M27 11l13 13-13 13"/></svg></a></p>
+          </div>
+          <div class="hero__facts">
+            <h2 class="h-small">Interests</h2>
+            <ul class="interests"><li>Agentic AI</li><li>LLMs</li><li>Computer vision</li><li>Multimodal AI</li><li>Deep learning</li><li>AI-powered applications</li></ul>
+          </div>
+        </div>
+        <dl class="facts">
+          <div><dt>Education</dt><dd>B.S. Civil Engineering, National Taiwan University</dd></div>
+          <div><dt>Studied in</dt><dd>Malaysia, Taiwan, South Korea</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section id="projects" class="sec" aria-labelledby="projects-title" tabindex="-1">
+      <div class="sec__side"><h2 id="projects-title">Projects</h2></div>
+      <div class="sec__body">
+        <p class="intro" data-reveal>Three projects. Each opens on its own page with the full detail, the results and their limits.</p>
+        <ul class="projects">
+      <li class="project" data-reveal style="--d:0ms">
+        <div class="project__main">
+          <h3><a class="project__link" href="/work/computer-agent/">Computer-use agent core</a></h3>
+          <p>An agent where the model only proposes, and a safety broker decides what runs.</p>
+          <p class="project__meta">Python, Safety gates, Benchmarks<span class="sep" aria-hidden="true"> / </span><span class="state">Pre-MVP</span><span class="sep" aria-hidden="true"> / </span>Private repository</p>
+        </div>
+        <span class="project__go" aria-hidden="true"><svg viewBox="0 0 48 48" width="22" height="22" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 24h34M27 11l13 13-13 13"/></svg></span>
+      </li>
+      <li class="project" data-reveal style="--d:70ms">
+        <div class="project__main">
+          <h3><a class="project__link" href="/work/sidequest/">SIDEQUEST</a></h3>
+          <p>An activity-planning product where AI drafts and a person approves.</p>
+          <p class="project__meta">Next.js, FastAPI, Local LLMs<span class="sep" aria-hidden="true"> / </span><span class="state">Web and API working</span><span class="sep" aria-hidden="true"> / </span>Private repository</p>
+        </div>
+        <span class="project__go" aria-hidden="true"><svg viewBox="0 0 48 48" width="22" height="22" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 24h34M27 11l13 13-13 13"/></svg></span>
+      </li>
+      <li class="project" data-reveal style="--d:140ms">
+        <div class="project__main">
+          <h3><a class="project__link" href="/work/robin/">ROBIN</a></h3>
+          <p>A learned query optimizer rebuilt from scratch, with the negative results left in.</p>
+          <p class="project__meta">PyTorch, DuckDB, Reinforcement learning<span class="sep" aria-hidden="true"> / </span><span class="state">Small synthetic study</span><span class="sep" aria-hidden="true"> / </span>Not published yet</p>
+        </div>
+        <span class="project__go" aria-hidden="true"><svg viewBox="0 0 48 48" width="22" height="22" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 24h34M27 11l13 13-13 13"/></svg></span>
+      </li></ul>
+      </div>
+    </section>
+
+    <section id="stack" class="sec" aria-labelledby="stack-title" tabindex="-1">
+      <div class="sec__side"><h2 id="stack-title">Technical stack</h2></div>
+      <div class="sec__body">
+        <ul class="legend" aria-label="Legend" data-reveal><li><span class="mark mark--used" aria-hidden="true"></span>Used in a project</li><li><span class="mark mark--building" aria-hidden="true"></span>Building with it now</li><li><span class="mark mark--earlier" aria-hidden="true"></span>Earlier work</li></ul>
+        <div class="groups">
+      <div class="group" data-reveal>
+        <h3>Languages</h3>
+        <ul><li class="is-used"><span class="mark mark--used" aria-hidden="true"></span>Python</li><li class="is-used"><span class="mark mark--used" aria-hidden="true"></span>TypeScript</li><li class="is-used"><span class="mark mark--used" aria-hidden="true"></span>SQL</li><li class="is-earlier"><span class="mark mark--earlier" aria-hidden="true"></span>C++</li></ul>
+      </div>
+      <div class="group" data-reveal>
+        <h3>Machine learning</h3>
+        <ul><li class="is-used"><span class="mark mark--used" aria-hidden="true"></span>PyTorch</li><li class="is-used"><span class="mark mark--used" aria-hidden="true"></span>NumPy</li><li class="is-building"><span class="mark mark--building" aria-hidden="true"></span>Hugging Face Transformers and PEFT</li><li class="is-earlier"><span class="mark mark--earlier" aria-hidden="true"></span>scikit-learn</li><li class="is-earlier"><span class="mark mark--earlier" aria-hidden="true"></span>TensorFlow</li></ul>
+      </div>
+      <div class="group" data-reveal>
+        <h3>Vision and multimodal</h3>
+        <ul><li class="is-used"><span class="mark mark--used" aria-hidden="true"></span>Speech-to-text (faster-whisper)</li><li class="is-used"><span class="mark mark--used" aria-hidden="true"></span>Vision-language verification (llava)</li><li class="is-earlier"><span class="mark mark--earlier" aria-hidden="true"></span>CNN image classification (ResNet50, VGG16)</li><li class="is-earlier"><span class="mark mark--earlier" aria-hidden="true"></span>OpenCV</li></ul>
+      </div>
+      <div class="group" data-reveal>
+        <h3>LLMs and agents</h3>
+        <ul><li class="is-used"><span class="mark mark--used" aria-hidden="true"></span>Policy-gated tool-calling agents</li><li class="is-used"><span class="mark mark--used" aria-hidden="true"></span>Agent benchmark design</li><li class="is-used"><span class="mark mark--used" aria-hidden="true"></span>Anthropic API</li><li class="is-used"><span class="mark mark--used" aria-hidden="true"></span>Local models through Ollama</li><li class="is-building"><span class="mark mark--building" aria-hidden="true"></span>LLM-as-judge evaluation</li></ul>
+      </div>
+      <div class="group" data-reveal>
+        <h3>Data and infrastructure</h3>
+        <ul><li class="is-used"><span class="mark mark--used" aria-hidden="true"></span>PostgreSQL</li><li class="is-used"><span class="mark mark--used" aria-hidden="true"></span>DuckDB</li><li class="is-used"><span class="mark mark--used" aria-hidden="true"></span>SQLite</li><li class="is-used"><span class="mark mark--used" aria-hidden="true"></span>FastAPI</li><li class="is-building"><span class="mark mark--building" aria-hidden="true"></span>MLflow</li></ul>
+      </div>
+      <div class="group" data-reveal>
+        <h3>Engineering practice</h3>
+        <ul><li class="is-used"><span class="mark mark--used" aria-hidden="true"></span>pytest, mypy and ruff</li><li class="is-used"><span class="mark mark--used" aria-hidden="true"></span>GitHub Actions CI</li><li class="is-used"><span class="mark mark--used" aria-hidden="true"></span>React and Vite</li><li class="is-used"><span class="mark mark--used" aria-hidden="true"></span>pnpm and Turborepo</li></ul>
+      </div></div>
+        <p class="more" data-reveal><a class="textlink" href="/#stack">Where each one was used <svg viewBox="0 0 48 48" width="18" height="18" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 24h34M27 11l13 13-13 13"/></svg></a></p>
+      </div>
+    </section>
+
+    <section id="record" class="sec" aria-labelledby="record-title" tabindex="-1">
+      <div class="sec__side"><h2 id="record-title">Record</h2></div>
+      <div class="sec__body">
+        <p class="intro" data-reveal>Education and independent projects, newest first. Dates come from commit history.</p>
+        <ol class="events" data-reveal><li><span class="when">Oct 2026</span><div><strong>P-Check multilingual test</strong><span>Public repository. Experiment prepared; results pending.</span></div></li><li><span class="when">Oct 2026</span><div><strong>ROBIN</strong><span>Learned join-order optimizer reproduced on DuckDB, with an honest results log.</span></div></li><li><span class="when">Sep 2026</span><div><strong>Computer-use agent core</strong><span>Broker, trust lattice, event log and benchmark harness. 42 commits.</span></div></li><li><span class="when">Aug–Sep 2026</span><div><strong>SIDEQUEST</strong><span>Web and API product across eight phases. 41 commits.</span></div></li><li><span class="when">Aug 2026</span><div><strong>PEFT ablation study</strong><span>Design locked, baseline and full fine-tune measured. 16 commits.</span></div></li><li><span class="when">—</span><div><strong>B.S. Civil Engineering</strong><span>National Taiwan University.</span></div></li></ol>
+        <p class="more" data-reveal><a class="textlink" href="/#record">Full record, 8 entries <svg viewBox="0 0 48 48" width="18" height="18" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 24h34M27 11l13 13-13 13"/></svg></a></p>
+      </div>
+    </section>
+
+    <section id="contact" class="sec contact" aria-labelledby="contact-title" tabindex="-1">
+      <div class="sec__side"><h2 id="contact-title">Contact</h2></div>
+      <div class="sec__body">
+        <p class="intro" data-reveal>If you build intelligent systems and care how they fail, I’d like to hear about it.</p>
+        <p class="mail" data-reveal><a href="mailto:erhfwuliang@live.com">erhfwuliang@live.com</a></p>
+        <ul class="elsewhere" data-reveal>
+          <li><a class="textlink" href="https://github.com/Liang714" target="_blank" rel="noopener noreferrer">GitHub <svg viewBox="0 0 48 48" width="16" height="16" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 10H9v29h29V29M28 8h12v12M40 8L22 26"/></svg></a></li>
+          <li><a class="textlink" href="https://www.linkedin.com/in/liang714" target="_blank" rel="noopener noreferrer">LinkedIn <svg viewBox="0 0 48 48" width="16" height="16" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 10H9v29h29V29M28 8h12v12M40 8L22 26"/></svg></a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <footer class="foot"><p>© 2026 Erh Fwu Liang</p></footer>
+</body>
+</html>
