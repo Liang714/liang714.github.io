@@ -36,8 +36,22 @@ export function useFitName(
     fit()
     void document.fonts.ready.then(fit)
     window.addEventListener('resize', fit)
+
+    // A reader's own letter or word spacing can widen the name after the first fit, so fit again when the
+    // heading or the word changes size. The frame delay keeps the re-measure out of the observer callback.
+    let frame = 0
+    const refit = () => {
+      cancelAnimationFrame(frame)
+      frame = requestAnimationFrame(fit)
+    }
+    const observer = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(refit)
+    observer?.observe(container)
+    observer?.observe(text)
+
     return () => {
       window.removeEventListener('resize', fit)
+      observer?.disconnect()
+      cancelAnimationFrame(frame)
       setSize(container, '')
     }
   }, [box, word, capToHeight])

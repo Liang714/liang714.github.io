@@ -453,7 +453,8 @@
 
 .stack-page__groups {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  /* min(100%, …) lets one column shrink below 340px, so a 320px screen never scrolls sideways. */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
   gap: 56px var(--gap);
 }
 

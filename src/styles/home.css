@@ -218,8 +218,8 @@
 }
 
 .tok span {
+  /* Full strength: at 80% the label on the orange denied token fell to 4.2:1, under the 4.5:1 for small text. */
   font-weight: 500;
-  opacity: 0.8;
 }
 
 @media (max-width: 700px) {
@@ -770,11 +770,14 @@
 
 .card {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 20px;
 }
 
 .card__name a {
   font-size: 15vw;
+  /* The names fill at most 93% of the card, so this never breaks a word unless a reader widens the letter spacing. */
+  overflow-wrap: anywhere;
 }
 
 .card__frame {

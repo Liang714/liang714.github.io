@@ -82,6 +82,8 @@
 
 .workbench {
   display: grid;
+  /* A bare grid column grows to its widest content; minmax(0, 1fr) keeps it inside the page at 320px. */
+  grid-template-columns: minmax(0, 1fr);
   gap: 24px;
 }
 
