@@ -34,7 +34,7 @@ describe('home page content', () => {
     expect(heroLine).toMatch(/student/)
   })
 
-  it('pairs every interest with the work that backs it', () => {
+  it('gives every interest its own name and a note of technologies', () => {
     expect(new Set(interests.map((interest) => interest.name)).size).toBe(interests.length)
     for (const interest of interests) expect(interest.note.length).toBeGreaterThan(3)
   })

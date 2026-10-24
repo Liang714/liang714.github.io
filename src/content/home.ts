@@ -61,14 +61,17 @@ export const facts = {
   now: 'Currently a student',
 } as const
 
-/** Each interest sits beside the work in this repository that backs it. */
+/**
+ * Each interest sits beside the current, widely used technologies in that area. These are interests I follow,
+ * not claims of use: the Stack page says what my projects actually use.
+ */
 export const interests: readonly { readonly name: string; readonly note: string }[] = [
-  { name: 'Agentic AI', note: 'Agent core, Personal agent' },
-  { name: 'LLMs', note: 'Local models through Ollama, Anthropic API' },
-  { name: 'Computer vision', note: 'Animal-Classification: ResNet50, VGG16' },
-  { name: 'Multimodal AI', note: 'Speech-to-text and vision-language checks' },
-  { name: 'Deep learning', note: 'PEFT ablation study' },
-  { name: 'AI-powered applications', note: 'Sidequest' },
+  { name: 'Agentic AI', note: 'MCP, A2A, LangGraph' },
+  { name: 'LLMs', note: 'Claude, GPT, Gemini, Qwen3' },
+  { name: 'Computer vision', note: 'SAM 3, DINOv3, YOLO26' },
+  { name: 'Multimodal AI', note: 'Qwen3-VL, Gemini, Whisper' },
+  { name: 'Deep learning', note: 'PyTorch, JAX, vLLM' },
+  { name: 'AI-powered applications', note: 'Next.js, Vercel AI SDK, pgvector' },
 ]
 
 /** The numbers Robin's exhibit draws. A test checks they still match the case study's own result text. */
