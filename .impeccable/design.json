@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-23T11:53:58.000Z",
+  "generatedAt": "2026-10-24T10:11:47.000Z",
   "title": "Design System: Liang — AI Engineer portfolio",
   "extensions": {
     "colorMeta": {
@@ -412,12 +412,12 @@
       "css": ".ds-lane{position:relative;display:flex;align-items:flex-end;gap:14px;height:150px;padding:0 0 10px;border-bottom:10px solid #2e3135}.ds-gate-frame{position:relative;width:112px;height:150px;flex:none;order:2}.ds-gate-frame i{position:absolute;bottom:0;width:16px;height:100%;background:#eff0f1}.ds-gate-frame i:first-child{left:0}.ds-gate-frame i:nth-child(2){right:0}.ds-gate-frame b{position:absolute;inset:0 0 auto;height:16px;background:#eff0f1}.ds-tok{display:flex;align-items:center;gap:12px;height:48px;padding:0 18px;background:#eff0f1;color:#17181a;font:700 .85rem \"Chivo Variable\",Arial,sans-serif;white-space:nowrap}.ds-tok em{font-style:normal;font-weight:500;opacity:.85}.ds-tok--ask{background:#8da7ff}.ds-tok--deny{background:#ff4a1f}"
     },
     {
-      "name": "Cobalt Bar",
+      "name": "Cobalt Group",
       "kind": "custom",
       "refersTo": "bar-cobalt",
-      "description": "One group in the stack list: a filled bar that opens in place.",
-      "html": "<details class=\"ds-bar\" open><summary><span>Languages</span><span class=\"ds-plus\" aria-hidden=\"true\"></span></summary><ul><li><span>Python</span><small>Used in a project</small></li><li><span>C++</span><small>Earlier work</small></li></ul></details>",
-      "css": ".ds-bar{background:#0f33a8;color:#fff;font:400 1.1rem \"Chivo Variable\",Arial,sans-serif}.ds-bar summary{display:flex;align-items:center;justify-content:space-between;min-height:58px;padding:0 18px;font-weight:700;cursor:pointer;list-style:none}.ds-bar summary::-webkit-details-marker{display:none}.ds-bar summary:hover{background:#0c2a8c}.ds-plus{position:relative;width:14px;height:14px}.ds-plus:before,.ds-plus:after{content:\"\";position:absolute;background:currentColor}.ds-plus:before{inset:6px 0}.ds-plus:after{inset:0 6px}.ds-bar[open] .ds-plus:after{transform:scaleY(0)}.ds-bar ul{margin:0;padding:4px 18px 18px;list-style:none}.ds-bar li{display:flex;justify-content:space-between;gap:16px;padding:7px 0}.ds-bar small{font-size:.85rem;opacity:.9}.ds-bar summary:focus-visible{outline:3px solid #fff;outline-offset:-3px}"
+      "description": "One group in the stack: a filled block, always open, each item marked by a shape and an evidence word.",
+      "html": "<section class=\"ds-group\"><h3>Languages</h3><ul><li><i class=\"ds-m ds-m--solid\"></i><span>Python</span><small>Used in a project</small></li><li><i class=\"ds-m ds-m--dash\"></i><span>C++</span><small>Earlier work</small></li></ul></section>",
+      "css": ".ds-group{background:#0f33a8;color:#fff;padding-bottom:14px;font:400 1.1rem \"Chivo Variable\",Arial,sans-serif}.ds-group h3{display:flex;align-items:center;min-height:58px;margin:0;padding:0 18px;font-size:1.1rem;font-weight:800}.ds-group ul{margin:0;padding:0 18px;list-style:none}.ds-group li{display:grid;grid-template-columns:10px 1fr auto;gap:4px 12px;align-items:baseline;padding:7px 0}.ds-group small{font-size:.85rem;opacity:.9;text-align:right}.ds-m{display:inline-block;width:10px;height:10px;background:currentColor}.ds-m--dash{height:3px}"
     },
     {
       "name": "Lit Line",

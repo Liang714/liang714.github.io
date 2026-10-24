@@ -47,6 +47,9 @@ export const homeProjects: readonly HomeProject[] = [
 
 export const heroLine = 'AI engineer, currently a student.'
 
+/** What I do, in words anyone can follow. Every action passes the gate because the model only proposes. */
+export const heroWhat = 'I build AI agents whose every action passes a safety gate, and I test them honestly.'
+
 export const background =
   'I trained as a civil engineer at National Taiwan University, where the first question is always what has to hold, and how you will know. I am now a student moving that habit into AI: agents with safety gates, honest evaluation, and products that get finished.'
 

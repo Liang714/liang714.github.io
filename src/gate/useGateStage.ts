@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useReducedMotion } from '../hooks/useReducedMotion.ts'
 import { loadGsap } from '../lib/gsap.ts'
+import type { Verdict } from '../playground/demo.ts'
 import { INTRO_TEXT, createStage } from './stage.ts'
 import type { Stage } from './stage.ts'
 
@@ -16,6 +17,8 @@ export function useGateStage() {
   const [asking, setAsking] = useState(false)
   const [autoplaying, setAutoplaying] = useState(false)
   const [sendable, setSendable] = useState(true)
+  // `count` changes with every ruling, so the word on the gate is a new element each time and its entrance replays.
+  const [verdict, setVerdict] = useState<{ value: Verdict | null; count: number }>({ value: null, count: 0 })
 
   useEffect(() => {
     const elements = { lane: lane.current, gate: gate.current, layer: layer.current }
@@ -31,6 +34,7 @@ export function useGateStage() {
           asking: setAsking,
           autoplaying: setAutoplaying,
           sendable: setSendable,
+          verdict: (value) => setVerdict((previous) => ({ value, count: previous.count + 1 })),
         },
         { reduced },
       )
@@ -52,6 +56,7 @@ export function useGateStage() {
     asking,
     autoplaying,
     sendable,
+    verdict,
     send: useCallback(() => stage.current?.send(), []),
     approve: useCallback(() => stage.current?.approve(), []),
     decline: useCallback(() => stage.current?.decline(), []),

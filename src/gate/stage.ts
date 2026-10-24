@@ -1,6 +1,6 @@
 import type { Gsap } from '../lib/gsap.ts'
 import { APPROVED_SAID, DECLINED_SAID, SILENCE_SAID, demoRulings } from '../playground/demo.ts'
-import type { DemoRuling } from '../playground/demo.ts'
+import type { DemoRuling, Verdict } from '../playground/demo.ts'
 
 /** What the controller needs to tell the page. The page owns the words and the buttons; this owns the tokens. */
 export interface StageView {
@@ -10,6 +10,8 @@ export interface StageView {
   asking(open: boolean): void
   autoplaying(active: boolean): void
   sendable(enabled: boolean): void
+  /** The one-word ruling shown on the gate, or null while a request is on its way. */
+  verdict(value: Verdict | null): void
 }
 
 export interface StageElements {
@@ -29,8 +31,8 @@ export interface Stage {
 
 type Choice = 'approve' | 'decline' | 'timeout' | 'cancel'
 
-export const INTRO_TEXT = 'The model proposes an action. The gate rules on it.'
-const REDUCED_TEXT = 'The model proposes an action. Press Send an action to see the gate rule on it.'
+export const INTRO_TEXT = 'This is the safety gate from my agent project. Send it a request and see what it decides.'
+const REDUCED_TEXT = 'This is the safety gate from my agent project. Press Send an action to see what it decides.'
 const AUTOPLAY_ENDED = 'Press Send an action to try another.'
 const PAUSED = 'Paused. Press Send an action to try one yourself.'
 const AUTOPLAY_COUNT = 4
@@ -57,12 +59,10 @@ export function createStage(gsap: Gsap, el: StageElements, view: StageView, opti
   const make = (ruling: DemoRuling): HTMLElement => {
     const token = document.createElement('div')
     token.className = 'tok'
-    token.append(ruling.tool)
-    if (ruling.target) {
-      const detail = document.createElement('span')
-      detail.textContent = ruling.target
-      token.append(detail)
-    }
+    token.append(ruling.label)
+    const detail = document.createElement('span')
+    detail.textContent = ruling.tool
+    token.append(detail)
     el.layer.append(token)
     tokens.add(token)
     return token
@@ -116,29 +116,35 @@ export function createStage(gsap: Gsap, el: StageElements, view: StageView, opti
     const token = make(ruling)
     const g = geometry(token)
     gsap.set(token, { x: g.start })
+    view.verdict(null)
     if (user) view.say('Proposed. On its way to the gate.', true)
     await fly(token, g.stop)
     if (destroyed) return
 
     if (ruling.verdict === 'allow') {
+      view.verdict('allow')
       view.say(ruling.said, user)
       await fly(token, g.exit, 340, 'power1.in')
     } else if (ruling.verdict === 'deny') {
       token.classList.add('is-deny')
+      view.verdict('deny')
       view.say(ruling.said, user)
       await fly(token, g.stop - 90, 420, 'power3.out')
       await fade(token, 1.4)
     } else {
       token.classList.add('is-ask')
+      view.verdict('ask')
       view.say(ruling.said, user)
       const choice = await decision(user ? 12000 : 6000)
       if (destroyed) return
       token.classList.remove('is-ask')
       if (choice === 'approve') {
+        view.verdict('allow')
         view.say(APPROVED_SAID, true)
         await fly(token, g.exit, 340, 'power1.in')
       } else {
         token.classList.add('is-deny')
+        view.verdict('deny')
         view.say(choice === 'timeout' ? SILENCE_SAID : DECLINED_SAID, choice !== 'timeout' || user)
         await fly(token, g.stop - 90, 420, 'power3.out')
         await fade(token, 1.2)
@@ -152,6 +158,7 @@ export function createStage(gsap: Gsap, el: StageElements, view: StageView, opti
     for (const token of [...tokens]) remove(token)
     const token = make(ruling)
     const g = geometry(token)
+    view.verdict(ruling.verdict)
     if (ruling.verdict === 'allow') {
       gsap.set(token, { x: g.past })
       view.say(ruling.said, user)
@@ -168,10 +175,12 @@ export function createStage(gsap: Gsap, el: StageElements, view: StageView, opti
         token.classList.remove('is-ask')
         if (choice === 'approve') {
           gsap.set(token, { x: g.past })
+          view.verdict('allow')
           view.say(APPROVED_SAID, true)
         } else {
           token.classList.add('is-deny')
           gsap.set(token, { x: g.stop - 90 })
+          view.verdict('deny')
           view.say(DECLINED_SAID, true)
         }
       })

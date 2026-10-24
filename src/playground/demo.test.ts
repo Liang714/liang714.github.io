@@ -35,6 +35,14 @@ describe('first-screen demo rulings', () => {
     }
   })
 
+  it('labels every request in short plain words that fit beside the gate on a phone', () => {
+    for (const ruling of rulings) {
+      expect(ruling.label.length).toBeGreaterThan(5)
+      expect(ruling.label.length).toBeLessThanOrEqual(22)
+      expect(ruling.label).not.toMatch(/[./_]/)
+    }
+  })
+
   it('keeps the bulk-delete claim true: twelve files reach critical risk', () => {
     const bulk = rulings.find((ruling) => ruling.id === 'delete-bulk')
     expect(bulk?.risk).toBe('critical')

@@ -30,7 +30,7 @@ export function useFitName(
         return
       }
       const fitted = (100 * available) / at100
-      setSize(container, `${(capToHeight ? Math.min(fitted, window.innerHeight * 0.5) : fitted).toFixed(1)}px`)
+      setSize(container, `${(capToHeight ? Math.min(fitted, window.innerHeight * 0.44) : fitted).toFixed(1)}px`)
     }
 
     fit()

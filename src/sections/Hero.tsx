@@ -1,16 +1,19 @@
 import { useEffect, useRef } from 'react'
 import { ButtonLink } from '../components/ButtonLink.tsx'
 import { site } from '../config/site.ts'
-import { heroLine } from '../content/home.ts'
+import { heroLine, heroWhat } from '../content/home.ts'
 import { useGateStage } from '../gate/useGateStage.ts'
 import { useFitName } from '../hooks/useFitName.ts'
+
+/** The one word shown on the gate. The line above it gives the reason. */
+const VERDICT_WORD = { allow: 'Allowed', ask: 'Held', deny: 'Denied' } as const
 
 /**
  * The name is the headline, and the gate is the picture: a visitor sends an action and watches the
  * project's own rule engine allow it, deny it, or hold it for them.
  */
 export function Hero() {
-  const { lane, gate, layer, read, asking, autoplaying, sendable, send: sendAction, approve: approveAction, decline, pause } = useGateStage()
+  const { lane, gate, layer, read, asking, autoplaying, sendable, verdict, send: sendAction, approve: approveAction, decline, pause } = useGateStage()
   const monument = useRef<HTMLHeadingElement | null>(null)
   const word = useRef<HTMLSpanElement | null>(null)
   const send = useRef<HTMLButtonElement | null>(null)
@@ -74,7 +77,13 @@ export function Hero() {
             <span className="gate__post" />
             <span className="gate__post" />
             <span className="gate__beam" />
-            <span className="gate__name">Policy gate</span>
+            {verdict.value ? (
+              <span key={verdict.count} className={`gate__verdict gate__verdict--${verdict.value}`}>
+                {VERDICT_WORD[verdict.value]}
+              </span>
+            ) : (
+              <span className="gate__name">Safety gate</span>
+            )}
           </div>
           <div ref={layer} className="lane__tokens" />
         </div>
@@ -89,6 +98,7 @@ export function Hero() {
         <p className="hero__sentence">
           {site.name}. {heroLine}
         </p>
+        <p className="hero__what">{heroWhat}</p>
       </div>
     </section>
   )

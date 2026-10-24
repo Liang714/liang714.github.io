@@ -7,6 +7,8 @@ export type Verdict = 'allow' | 'ask' | 'deny'
 
 export interface DemoRuling {
   readonly id: string
+  /** The request in plain words, short enough to sit on a phone beside the gate. */
+  readonly label: string
   readonly tool: string
   readonly target: string
   readonly verdict: Verdict
@@ -18,6 +20,14 @@ export interface DemoRuling {
 
 /** The order the demo sends them in: one of each verdict first, then the harder ones. */
 export const DEMO_ORDER = ['list', 'traversal', 'rename', 'unknown-tool', 'delete-bulk'] as const
+
+const LABEL: Record<(typeof DEMO_ORDER)[number], string> = {
+  list: 'List the inbox',
+  traversal: 'Read a system file',
+  rename: 'Rename an invoice',
+  'unknown-tool': 'Run a shell command',
+  'delete-bulk': 'Delete 12 drafts',
+}
 
 const SAID: Record<(typeof DEMO_ORDER)[number], string> = {
   list: 'Allowed. Low risk and inside the workspace, so it runs without interrupting anyone.',
@@ -49,6 +59,7 @@ export function demoRulings(): readonly DemoRuling[] {
     const trace = evaluate({ config: configFor(scenario), proposal, goal: scenario.goal })
     return {
       id,
+      label: LABEL[id],
       tool: proposal.tool,
       target: shortTarget(id, describeTarget(proposal.arguments)),
       verdict: VERDICT[trace.outcome.kind],

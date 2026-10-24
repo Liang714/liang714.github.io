@@ -31,6 +31,7 @@
   --step-small: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
   --step-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
   --step-lead: clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem);
+  --step-ui: clamp(1.125rem, 0.95rem + 0.55vw, 1.4375rem);
   --step-sub: clamp(1.625rem, 1.1rem + 1.5vw, 2.25rem);
   --step-head: clamp(2.25rem, 1rem + 5vw, 5rem);
   --step-poster: clamp(3.5rem, 1.5rem + 9.5vw, 10.5rem);
@@ -40,7 +41,7 @@
   --m: max(clamp(16px, 2.2vw, 32px), calc((100vw - 1800px) / 2), env(safe-area-inset-left), env(safe-area-inset-right));
   --gap: clamp(16px, 2vw, 32px);
   --pad: clamp(72px, 9vw, 140px);
-  --sq: clamp(260px, 31vw, 450px);
+  --sq: clamp(300px, 36vw, 520px);
   --sqh: var(--sq);
   --bar: 64px;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);

@@ -45,7 +45,7 @@ the append-only log).
 Two parts of the site use it. The full simulator at `/gate/` lets a visitor change any request and rule. The
 first-screen demo (`src/gate/`) sends five fixed requests through the same engine: `playground/demo.ts` takes every
 verdict from the engine's own output, and `demo.test.ts` fails if the words on screen ever disagree with it. The
-Agent core exhibit on the home page shows a real ruling from the same trace.
+Agent core exhibit on the home page shows a real ruling from the same trace. Each request carries a plain label ("Delete 12 drafts") and the word on the gate (Allowed, Held, Denied) comes from the engine's verdict; a test keeps the labels short enough to fit beside the gate on a phone.
 
 It is a simulation and says so wherever it appears. No model runs, nothing is sent anywhere, and file contents shown in
 it are synthetic. Two details were checked against the original code rather than assumed: path containment runs
@@ -73,7 +73,7 @@ Smooth scrolling is Lenis, driven from the GSAP ticker, and it is optional: unde
 created and the browser scrolls natively. Anchor and route changes go through one function (`lib/scroll.ts`), which
 recalculates the page height first so a jump to a section of a taller page lands where it should. Parts of a section
 rise once, by scroll position rather than by intersection, so a jump that skips a section never leaves it hidden.
-Interests and project names brighten as they cross the middle of the screen. The name rises once in CSS. The gate demo
+Interests and project names brighten as they cross the middle of the screen. The project names pass a pinned square only on wide screens; below 900px the pinned layout would hide its own words, so each project becomes a card (name, picture, then the result and its limit) and nothing is pinned. The name rises once in CSS. The gate demo
 plays four requests on its own and then stops; a visitor can pause it or take over, and under reduced motion nothing
 travels and each ruling simply appears.
 

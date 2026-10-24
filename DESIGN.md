@@ -182,8 +182,8 @@ A graphite room with one cobalt field and one pale field, lit by a single safety
 - **Monument** (900, capitals, fitted to the page width and capped at half the screen height, 0.9, -0.03em): the name in the hero and again, cropped, in the footer.
 - **Poster** (900, capitals, clamp(3.5rem, 1.5rem + 9.5vw, 10.5rem), 0.9, -0.05em): project names, and the words Work, Stack and Record.
 - **Head** (900, capitals, clamp(2.25rem, 1rem + 5vw, 5rem), 0.98, -0.045em): the interests, and the title of every detail page.
-- **Sub** (900, clamp(1.625rem, 1.1rem + 1.5vw, 2.25rem), 1.1, -0.03em): section titles inside a detail page.
-- **Lead** (600, clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem), 1.32): the background statement and the line under each page title; 34em at most.
+- **Sub** (900 for page sections, 800 under the name, clamp(1.625rem, 1.1rem + 1.5vw, 2.25rem), 1.1, -0.03em): section titles inside a detail page, and who the owner is under the name.
+- **Lead** (600, clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem), 1.32): the background statement, what the owner does under the name, the result in each exhibit, and the line under each page title; 34em at most.
 - **Body** (400, clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem), 1.4): reading, 38em at most.
 - **Label** (700, clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem)): controls, notes, table cells. Never below 13px.
 
@@ -193,7 +193,7 @@ A graphite room with one cobalt field and one pale field, lit by a single safety
 
 ## Layout
 
-One pair of equal page margins (16 to 32px, widening past 1800px so the page stops growing). Home sections are full-bleed fields with content on that margin; the about block is a 12-column grid (3 for the facts, 9 for the statement); stack and record are a 5/7 and 6/6 split with a sticky giant word on the left. The work section is a grid in which one 450px square is sticky at the middle of the screen and the three names pass across it, 74svh apart. Section padding is 72 to 140px. On a phone the square becomes portrait (78vw by 104vw), the facts drop beneath it, and every split stacks.
+One pair of equal page margins (16 to 32px, widening past 1800px so the page stops growing). Home sections are full-bleed fields with content on that margin; the about block is a 12-column grid (3 for the facts, 9 for the statement); stack and record are a 5/7 and 6/6 split with a sticky giant word on the left. The work section is a grid in which one 520px square (36vw) is sticky at the middle of the screen and the three names pass across it, 74svh apart, with the result and the limit either side of it. Section padding is 72 to 140px. Below 900px nothing is pinned: each project is a card of name, picture and words, and every split stacks.
 
 Detail pages use the same margin: a head (way back, title, one lead sentence), then a reading column no wider than 38em for paragraphs, with a sticky contents list on case studies.
 
@@ -217,18 +217,18 @@ Square corners, everywhere. The one exception is the round orange mail button in
 - **Text link:** bold, underlined 2px with a 0.3em offset, 44px tall, arrow on the right.
 
 ### The gate demo
-- **Gate:** two ink posts 16px wide and a 16px beam, 150px tall; a floor bar in lifted graphite.
-- **Requests:** 48px rectangles with the tool name in bold and the target in regular weight. Ink while travelling, ask blue while held, orange once denied.
+- **Gate:** two ink posts 16px wide and a 16px beam, 150px tall; a floor bar in lifted graphite. The ruling appears above it as one word (Allowed, Held, Denied) in black capitals, in ink, ask blue or orange.
+- **Requests:** 48px rectangles with a plain label in bold ("Delete 12 drafts") and the tool name in regular weight beside it on wide screens. Ink while travelling, ask blue while held, orange once denied.
 - **Behaviour:** four requests play on their own and stop; a visitor can pause them or take over. Allowed requests pass, denied ones bounce back and fade, held ones wait for Approve or Decline and are declined after silence.
 
 ### Exhibits
-- **The held square:** raised graphite, 450px (31vw), with content only in the top and bottom thirds so a project name can cross the middle. Each exhibit has a title, a result and its limit, and a note when its content is a simulation or an example.
+- **The held square:** raised graphite, 520px (36vw), with content only in the top and bottom thirds so a project name can cross the middle. Each exhibit has a title, the result in lead-size type, and a note when its content is a simulation or an example. Either side of the square sit the project in a line, and the measured result with its limit, both word for word from the case study, at 16 to 17px.
 
 ### Lit lines
 - **Style:** poster-weight capitals that move from 40% to full ink as they cross the middle of the screen, with a right-aligned note naming the work behind each.
 
-### Bars (stack)
-- **Style:** a deeper cobalt step, 58px tall, plus sign that turns into a minus; the open list shows each item with its evidence word.
+### Stack groups
+- **Style:** six filled blocks in a deeper cobalt step, every one open, in two columns; each item has a mark (filled square, ring, dash) and its evidence word. Nothing needs a click.
 
 ### Contact rows
 - **Style:** display type, full width, alternating graphite and raised graphite, the first row holding the round mail button.

@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { routeTable } from '../../scripts/seo.mjs'
 import { site } from '../config/site.ts'
-import { ROBIN_RESULT, homeProjects, interests } from './home.ts'
+import { ROBIN_RESULT, heroLine, heroWhat, homeProjects, interests } from './home.ts'
 import { caseStudies } from './projects/index.ts'
 import { record } from './record.ts'
 import { stackGroups } from './stack.ts'
@@ -18,6 +18,20 @@ describe('home page content', () => {
     expect(text).toContain(`${best.mean} ± ${best.spread}`)
     expect(text).toContain(`${baseline.mean} ± ${baseline.spread}`)
     expect(text).toContain(`${queries} unseen queries`)
+  })
+
+  it('shows each project with the result and the limit from its case study', () => {
+    for (const project of homeProjects) {
+      const study = caseStudies.find((item) => item.slug === project.slug)
+      expect(study?.result.text.length).toBeGreaterThan(20)
+      expect(study?.result.caveat.length).toBeGreaterThan(20)
+    }
+  })
+
+  it('says what the owner does in plain words, without engine terms', () => {
+    expect(heroWhat).toMatch(/safety gate/)
+    expect(heroWhat).not.toMatch(/broker|lattice|capability|filesystem/i)
+    expect(heroLine).toMatch(/student/)
   })
 
   it('pairs every interest with the work that backs it', () => {
