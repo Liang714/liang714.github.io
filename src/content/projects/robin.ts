@@ -5,7 +5,6 @@ export const robin: CaseStudy = {
   slug: 'robin',
   title: 'ROBIN',
   headline: 'A learned query optimizer, reproduced from scratch, with the negative results left in.',
-  pictogram: 'join',
   period: 'Oct 2026',
   summary:
     'An RL agent that learns join orders for DuckDB. It rebuilds two ideas from the RELOAD paper (prioritised experience replay and MAML-based transfer) and adds a safe-fallback guard. Its results log reports what did not work.',

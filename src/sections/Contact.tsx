@@ -1,52 +1,50 @@
-import { ButtonLink } from '../components/ButtonLink.tsx'
-import { Pictogram } from '../components/Pictogram.tsx'
 import { Reveal } from '../components/Reveal.tsx'
+import { ArrowIcon } from '../components/Icon.tsx'
 import { site } from '../config/site.ts'
 
+const display = (url: string): string => url.replace(/^https?:\/\/(www\.)?/, '')
+
+/** Rows set as display type, alternating two flat tones. Every row is a link; nothing needs a form. */
 export function Contact() {
-  const resumeHref = site.resume ? `${import.meta.env.BASE_URL}${site.resume}` : ''
+  const resume = site.resume ? `${import.meta.env.BASE_URL}${site.resume}` : ''
   return (
-    <section id="contact" className="band contact" aria-labelledby="contact-title" tabIndex={-1}>
-      <div className="wrap">
-        <Reveal className="gantry">
-          <div className="gantry__beam" aria-hidden="true" />
-          <span className="gantry__rod gantry__rod--l" aria-hidden="true" />
-          <span className="gantry__rod gantry__rod--r" aria-hidden="true" />
-          <div className="sign contact__sign">
-            <h2 id="contact-title">If you build intelligent systems and care how they fail, I’d like to hear about it.</h2>
-
-            <div className="btn-row">
-              {site.email ? (
-                <ButtonLink href={`mailto:${site.email}`}>Email me</ButtonLink>
-              ) : (
-                <ButtonLink href={site.github}>Find me on GitHub</ButtonLink>
-              )}
-              {site.email && (
-                <ButtonLink variant="secondary" href={site.github}>
-                  GitHub
-                </ButtonLink>
-              )}
-              {site.linkedin && (
-                <ButtonLink variant="secondary" href={site.linkedin}>
-                  LinkedIn
-                </ButtonLink>
-              )}
-              {resumeHref && (
-                <ButtonLink variant="secondary" href={resumeHref} download>
-                  Résumé
-                </ButtonLink>
-              )}
-            </div>
-
-            {site.email && (
-              <p className="contact__address">
-                <Pictogram name="mail" size={22} />
-                <a href={`mailto:${site.email}`}>{site.email}</a>
-              </p>
-            )}
-          </div>
+    <section id="contact" className="sec contact" aria-labelledby="contact-title" tabIndex={-1}>
+      <Reveal className="crow crow--hello">
+        <h2 id="contact-title">Say hello</h2>
+        {site.email ? (
+          <a className="round" href={`mailto:${site.email}`} aria-label={`Email ${site.name}`}>
+            <ArrowIcon size={32} />
+          </a>
+        ) : (
+          <a className="round" href={site.github} aria-label="Find me on GitHub">
+            <ArrowIcon size={32} />
+          </a>
+        )}
+      </Reveal>
+      {site.email && (
+        <Reveal as="p" className="crow">
+          <a href={`mailto:${site.email}`}>{site.email}</a>
         </Reveal>
-      </div>
+      )}
+      <Reveal as="p" className="crow">
+        <a href={site.github} target="_blank" rel="noopener noreferrer">
+          {display(site.github)}
+        </a>
+      </Reveal>
+      {site.linkedin && (
+        <Reveal as="p" className="crow">
+          <a href={site.linkedin} target="_blank" rel="noopener noreferrer">
+            {display(site.linkedin)}
+          </a>
+        </Reveal>
+      )}
+      {resume && (
+        <Reveal as="p" className="crow">
+          <a href={resume} download>
+            Résumé (PDF)
+          </a>
+        </Reveal>
+      )}
     </section>
   )
 }

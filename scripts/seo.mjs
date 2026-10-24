@@ -20,14 +20,53 @@ function clip(text, max = 158) {
   return (out || text.slice(0, max - 1) + '…').trim()
 }
 
+const pages = [
+  {
+    path: 'work/',
+    title: `Work | ${site.name}`,
+    description:
+      'Three case studies and three projects in progress, each with its sample sizes, its caveats and what is not built yet printed beside the results.',
+    chunk: 'WorkIndexPage',
+  },
+  {
+    path: 'about/',
+    title: `About | ${site.name}`,
+    description: `${site.name}: a student moving a civil engineer's habit of asking what has to hold into AI systems.`,
+    chunk: 'AboutPage',
+  },
+  {
+    path: 'stack/',
+    title: `Stack | ${site.name}`,
+    description:
+      'A schedule, not a skill meter. Each entry says where the technology was actually used, so there are no percentages to take on trust.',
+    chunk: 'StackPage',
+  },
+  {
+    path: 'record/',
+    title: `Record | ${site.name}`,
+    description:
+      'Education and independent projects, newest first. Project dates come from commit history or file dates, so each row can be checked against its source.',
+    chunk: 'RecordPage',
+  },
+  {
+    path: 'gate/',
+    title: `The gate, in full | ${site.name}`,
+    description:
+      'The decision path from my computer-use agent, rebuilt as something you can poke. Pick a request, change a rule, and watch where it stops and why.',
+    chunk: 'GatePage',
+  },
+]
+
 export function routeTable() {
   return [
     { path: '', title: site.title, description: site.description, kind: 'home' },
+    ...pages.map((page) => ({ ...page, kind: 'page' })),
     ...caseStudies.map((study) => ({
       path: `work/${study.slug}/`,
       title: `${study.title} case study | ${site.name}`,
       description: clip(study.summary),
       kind: 'case',
+      chunk: 'CaseStudyPage',
     })),
   ]
 }

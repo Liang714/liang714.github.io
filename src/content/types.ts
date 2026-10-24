@@ -2,33 +2,6 @@
 
 export type Tone = 'neutral' | 'green' | 'yellow' | 'blue' | 'red'
 
-export type PictogramName =
-  // gates
-  | 'resolve'
-  | 'permission'
-  | 'risk'
-  | 'approval'
-  | 'budget'
-  | 'execute'
-  // projects
-  | 'agent'
-  | 'quest'
-  | 'join'
-  | 'tune'
-  | 'translate'
-  | 'assistant'
-  // interface
-  | 'arrow'
-  | 'external'
-  | 'lock'
-  | 'mail'
-  | 'branch'
-  | 'document'
-  | 'sun'
-  | 'moon'
-  | 'menu'
-  | 'close'
-
 export type Side = 'l' | 'r' | 't' | 'b'
 
 export interface DiagramNode {
@@ -100,7 +73,6 @@ export interface Repo {
 interface ProjectBase {
   readonly slug: string
   readonly title: string
-  readonly pictogram: PictogramName
   readonly period: string
   readonly summary: string
   readonly status: string

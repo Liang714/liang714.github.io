@@ -5,15 +5,12 @@ import { App } from './App.tsx'
 import './styles/fonts.css'
 import './styles/tokens.css'
 import './styles/base.css'
-import './styles/layout.css'
 import './styles/components.css'
-import './styles/hero.css'
-import './styles/work.css'
-import './styles/demo.css'
-import './styles/sections.css'
-import './styles/case-study.css'
+import './styles/home.css'
+import './styles/pages.css'
+import './styles/gate.css'
 
-// Content is visible without JavaScript; the hidden "hang in" state only exists once this class is set.
+// Content is visible without JavaScript; the hidden "rise in" state only exists once this class is set.
 document.documentElement.classList.add('js-reveal')
 
 const basename = import.meta.env.BASE_URL.replace(/\/$/, '') || undefined

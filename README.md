@@ -2,17 +2,18 @@
 
 A static portfolio site: React, TypeScript and Vite, deployed to GitHub Pages.
 
-The design is a site-entrance sign system. Four colours each carry one meaning (red blocked, yellow caution, blue a
-human decision, green permitted), and the centrepiece is an interactive simulation of the safety gate from my
-computer-use agent project. It is labelled as a simulation: no model runs and nothing leaves the browser.
+The site is one page that scrolls smoothly from top to bottom, with a page of detail behind each section. The design
+is called Monument: the name is set at the full width of the screen, and the first screen holds a live simulation of
+the safety gate from my computer-use agent project. It is labelled as a simulation: no model runs and nothing leaves
+the browser.
 
 ## What is in the site
 
-- **Home** — hero with the gate simulation running, selected work, the full gate demo, about, technology schedule,
-  record of revisions, contact.
-- **Case studies** — `/work/computer-agent/`, `/work/sidequest/` and `/work/robin/`, each with the problem, an
-  architecture diagram, decisions, results beside their limits, what broke, and what is not built.
-- **In progress** — three unfinished projects, labelled as such.
+- **Home (`/`)** — the gate demo and the name, background and interests, three projects, the technology stack, the
+  record, and contact.
+- **Detail pages** — `/work/` (all work, with the unfinished projects), `/work/computer-agent/`,
+  `/work/sidequest/` and `/work/robin/` (case studies), `/about/`, `/stack/`, `/record/`, and `/gate/`, the full
+  simulator where every request and rule can be changed.
 
 ## Requirements
 
@@ -33,7 +34,7 @@ npm run dev          # http://localhost:5173
 | `npm run build` | Type check, production build, then per-route HTML, sitemap, robots and 404 |
 | `npm run preview` | Serve the production build locally |
 | `npm run check` | Type check, lint (includes accessibility rules) and tests. CI runs this |
-| `npm test` | Unit tests for the gate simulator |
+| `npm test` | Unit tests for the gate simulator, the home content and the route table |
 | `npm run content:check` | List placeholders and wording that still needs your approval |
 | `npm run assets` | Regenerate the social-share image and touch icon |
 | `npm run build:subpath` | Build as if hosted under a project subpath, to test asset URLs |
@@ -46,8 +47,10 @@ Everything personal is in two places; components contain no facts.
    shown as blanks. Flip the `confirmed` flags to `true` once you have approved the wording they cover.
 2. **`src/content/`**
    - `projects/` — one file per case study (typed in `types.ts`), plus `lab.ts` for unfinished work. To add a project,
-     copy a file, fill the fields and add it to `projects/index.ts`. The page, card, sitemap entry and social tags
-     follow automatically.
+     copy a file, fill the fields and add it to `projects/index.ts`. The page, sitemap entry and social tags follow
+     automatically. To show it on the home page too, add its short name and one line to `home.ts`.
+   - `home.ts` — the short copy the home page shows: display names, one-liners, the background statement, the
+     interests and the work behind each.
    - `stack.ts` — the technology schedule. Each entry says where it was used.
    - `record.ts` — the revision table. Keep dates verifiable.
 
@@ -73,13 +76,14 @@ if the site is not at the domain root.
 ```
 src/
   config/site.ts        owner details and navigation
-  content/              typed project, stack and record data
-  components/           shared pieces: signs, buttons, diagram, tables, header, footer
-  sections/             home page sections
-  pages/                Home, CaseStudyPage, NotFound
-  playground/           the gate simulator: pure engine, scenarios, tests, and its UI
-  hooks/                theme, reduced motion, scroll spy, page metadata
-  styles/               tokens, base, layout, and one file per area
+  content/              typed project, stack, record and home-page copy
+  components/           header, footer, smooth scroll, buttons, tags, diagram, tables
+  sections/             the home page sections (hero, about, interests, work, stack, record, contact)
+  pages/                Home plus the lazy detail pages
+  gate/                 the first-screen demo: controller and its React hook
+  playground/           the gate simulator: pure engine, scenarios, tests, and the full-page UI
+  hooks/, lib/          reduced motion, scroll spy, page metadata; the scroll and GSAP helpers
+  styles/               tokens, base, components, home, pages, gate
 scripts/                postbuild (per-route HTML), SEO, placeholder check, asset generation
 docs/ARCHITECTURE.md    why the site is built this way
 PRODUCT.md, DESIGN.md   product truth and the visual system
@@ -90,8 +94,8 @@ PRODUCT.md, DESIGN.md   product truth and the visual system
 - Private repositories are labelled private. Nothing implies code can be read when it cannot.
 - Each result is printed with its sample size and limits. Work in progress is labelled as such.
 - No invented employers, metrics, awards, testimonials or publications.
-- Fonts are open (SIL OFL) and self-hosted: Barlow Condensed, Overpass and Overpass Mono. Icons and pictograms are drawn
-  for this site.
+- The font is open (SIL OFL) and self-hosted: Chivo. The few icons are drawn for this site. The pictures are interface
+  exhibits built from the projects' own data; the example quest in the Sidequest exhibit is labelled as an example.
 
 ## Licence
 

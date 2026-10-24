@@ -2,6 +2,7 @@ import { Outlet } from 'react-router-dom'
 import { RouteEffects } from './RouteEffects.tsx'
 import { SiteFooter } from './SiteFooter.tsx'
 import { SiteHeader } from './SiteHeader.tsx'
+import { SmoothScroll } from './SmoothScroll.tsx'
 
 export function Layout() {
   return (
@@ -15,6 +16,7 @@ export function Layout() {
       </main>
       <SiteFooter />
       <RouteEffects />
+      <SmoothScroll />
     </>
   )
 }

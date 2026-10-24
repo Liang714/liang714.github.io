@@ -1,43 +1,29 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="color-scheme" content="light dark" />
-    <meta name="theme-color" content="#f3f6f4" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#0e1112" media="(prefers-color-scheme: dark)" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#17181a" />
     <!--seo:start-->
     <title>Erh Fwu Liang — AI Engineer</title>
     <!--seo:end-->
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <script>
-      // Set the theme before first paint so there is no flash. Storage can throw; fall back quietly.
-      (function () {
-        var theme = 'light'
-        try {
-          var stored = localStorage.getItem('theme')
-          theme =
-            stored === 'light' || stored === 'dark'
-              ? stored
-              : window.matchMedia('(prefers-color-scheme: dark)').matches
-                ? 'dark'
-                : 'light'
-        } catch (error) {
-          theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-        }
-        document.documentElement.dataset.theme = theme
-      })()
-    </script>
   </head>
   <body>
     <div id="root"></div>
     <noscript>
-      <p style="padding: 24px; font: 18px/1.5 system-ui, sans-serif">
-        Erh Fwu Liang is an AI engineer building gated, auditable agent systems. This site needs JavaScript for its
-        interactive safety-gate simulator and case studies. Code and projects:
-        <a href="https://github.com/Liang714">github.com/Liang714</a>.
-      </p>
+      <div style="padding: 24px; font: 18px/1.5 system-ui, sans-serif; color: #eff0f1; background: #17181a">
+        <p>
+          <strong>Erh Fwu Liang</strong>, AI engineer and student. I trained as a civil engineer at National Taiwan
+          University and now build agents with safety gates, honest evaluation, and products that get finished.
+        </p>
+        <p>
+          This site needs JavaScript for its interactive safety gate and case studies. Code and projects:
+          <a href="https://github.com/Liang714" style="color: #8da7ff">github.com/Liang714</a>.
+        </p>
+      </div>
     </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>

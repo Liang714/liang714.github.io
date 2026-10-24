@@ -1,90 +1,46 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { site } from '../config/site.ts'
 import { useScrollSpy } from '../hooks/useScrollSpy.ts'
-import { useTheme } from '../hooks/useTheme.ts'
-import { LogoMark } from './LogoMark.tsx'
-import { Pictogram } from './Pictogram.tsx'
+import { onScrollFrame } from '../lib/scroll.ts'
 
 const sectionIds = site.nav.map((item) => item.id)
 
-/** The sticky sign band. The followed destination stays highlighted as the page scrolls. */
+/** Which nav item a detail page belongs to, so the bar still says where you are off the home page. */
+function sectionOf(pathname: string): string | undefined {
+  if (pathname.startsWith('/work')) return 'work'
+  if (pathname.startsWith('/stack')) return 'stack'
+  if (pathname.startsWith('/record')) return 'record'
+  return undefined
+}
+
+/** Transparent over the first screen, solid once the page has moved. */
 export function SiteHeader() {
   const { pathname } = useLocation()
   const onHome = pathname === '/'
-  const active = useScrollSpy(sectionIds, onHome)
-  const { theme, toggle } = useTheme()
-  const [menuOpen, setMenuOpen] = useState(false)
-  const menuButton = useRef<HTMLButtonElement | null>(null)
+  const spied = useScrollSpy(sectionIds, onHome)
+  const active = onHome ? spied : sectionOf(pathname)
+  const [solid, setSolid] = useState(false)
 
-  // Escape closes the open menu and hands focus back to the button that opened it.
-  useEffect(() => {
-    if (!menuOpen) return
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        setMenuOpen(false)
-        menuButton.current?.focus()
-      }
-    }
-    document.addEventListener('keydown', onKeyDown)
-    return () => document.removeEventListener('keydown', onKeyDown)
-  }, [menuOpen])
-
-  const links = site.nav.map((item) => (
-    <li key={item.id}>
-      <Link
-        className="sign-band__link"
-        to={{ pathname: '/', hash: `#${item.id}` }}
-        aria-current={active === item.id ? 'true' : undefined}
-        onClick={() => setMenuOpen(false)}
-      >
-        {item.label}
-        {menuOpen && <Pictogram name="arrow" size={20} />}
-      </Link>
-    </li>
-  ))
+  useEffect(() => onScrollFrame(() => setSolid(window.scrollY > 24)), [])
 
   return (
-    <header className="sign-band">
-      <div className="wrap sign-band__inner">
-        <Link className="brand" to="/" onClick={() => setMenuOpen(false)}>
-          <LogoMark />
-          <span className="brand__full">{site.name}</span>
-          <span className="brand__short">{site.shortName}</span>
-          <span className="brand__role">{site.role}</span>
-        </Link>
-
-        <nav className="sign-band__nav" aria-label="Primary">
-          <ul className="sign-band__list">{links}</ul>
-        </nav>
-
-        <div className="sign-band__tools">
-          <button type="button" className="band-btn" aria-pressed={theme === 'dark'} onClick={toggle}>
-            <Pictogram name={theme === 'dark' ? 'moon' : 'sun'} size={20} />
-            <span>{theme === 'dark' ? 'Night' : 'Day'}</span>
-            <span className="visually-hidden">theme. Press to switch.</span>
-          </button>
-          <button
-            ref={menuButton}
-            type="button"
-            className="band-btn sign-band__menu-btn"
-            aria-expanded={menuOpen}
-            aria-controls="mobile-nav"
-            onClick={() => setMenuOpen((open) => !open)}
-          >
-            <Pictogram name={menuOpen ? 'close' : 'menu'} size={20} />
-            <span>Menu</span>
-          </button>
-        </div>
-      </div>
-
-      {menuOpen && (
-        <nav id="mobile-nav" className="sign-band__panel" aria-label="Primary">
-          <div className="wrap">
-            <ul>{links}</ul>
-          </div>
-        </nav>
-      )}
+    <header className={`bar${solid ? ' is-solid' : ''}`}>
+      <Link className="bar__brand" to="/" translate="no">
+        <span className="bar__full">{site.name}</span>
+        <span className="bar__short">{site.shortName}</span>
+      </Link>
+      <nav aria-label="Primary">
+        <ul>
+          {site.nav.map((item) => (
+            <li key={item.id}>
+              <Link to={{ pathname: '/', hash: `#${item.id}` }} aria-current={active === item.id ? 'true' : undefined}>
+                {item.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </header>
   )
 }

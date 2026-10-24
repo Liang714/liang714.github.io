@@ -10,14 +10,14 @@ interface RevealProps {
 }
 
 /**
- * Signs hang into place the first time they come within reach of the viewport. Content is visible
- * by default: the hidden state exists only when JavaScript has marked the document, and never under
- * reduced motion or in print.
+ * Parts of a section rise into place the first time they come within reach of the viewport. Content
+ * is visible by default: the hidden state exists only when JavaScript has marked the document, and
+ * never under reduced motion or in print.
  *
  * This watches scroll position rather than using an IntersectionObserver on purpose. An anchor jump
- * (the nav, a hash link) skips straight over sections, and an observer only reports sections that
- * cross the viewport, so skipped ones would stay invisible. A position check reveals anything at or
- * above the fold, however the visitor got there.
+ * skips straight over sections, and an observer only reports sections that cross the viewport, so
+ * skipped ones would stay invisible. A position check reveals anything at or above the fold, however
+ * the visitor got there.
  */
 export function Reveal({ as: Tag = 'div', className, children, delay = 0 }: RevealProps) {
   const ref = useRef<HTMLElement | null>(null)

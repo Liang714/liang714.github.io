@@ -39,8 +39,11 @@ The civil-engineering background (checks, safety factors, load paths, records) i
 - Case studies are read by engineers who will check claims against repositories where those are public.
 - Most project repositories are **private**; only some older and newer repositories are public. Source links must
   never imply availability that does not exist.
-- The interactive playground is a **local simulation** of the personal-computer-agent's capability broker. It
-  re-implements the stage order and policy rules in TypeScript. No model runs in the browser and nothing is sent anywhere.
+- The gate demo in the first screen and the full simulator at `/gate/` are a **local simulation** of the
+  personal-computer-agent's capability broker. They re-implement the stage order and policy rules in TypeScript. No model
+  runs in the browser and nothing is sent anywhere.
+- The home page is one page with a detail page behind each section (work, about, stack, record, the gate in full).
+  The owner is a student and has no work history; the page says "currently a student" and never implies employment.
 
 ## Capabilities and Constraints
 

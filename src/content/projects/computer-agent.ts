@@ -5,7 +5,6 @@ export const computerAgent: CaseStudy = {
   slug: 'computer-agent',
   title: 'Computer-use agent core',
   headline: 'An agent where the model proposes and a broker decides.',
-  pictogram: 'agent',
   period: 'Sep 2026',
   summary:
     'A headless core for a macOS computer-use agent, built on one rule: the model can only propose actions, and every action passes a fixed six-stage broker. A benchmark harness scores safety, not just success.',

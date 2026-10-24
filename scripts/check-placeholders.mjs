@@ -11,9 +11,9 @@ const empty = [
 ]
 
 const unconfirmed = {
-  fullName: 'Display name is "Liang", taken from the GitHub handle. Replace with the full name.',
-  aboutCopy: 'The About copy was drafted from your brief. Read it and edit anything that is not true to you.',
-  aiAssistanceWording: 'The line about AI coding assistants appears on About and every case study. Approve or reword it.',
+  fullName: 'Confirm the display name shown in the bar, the footer and the share image.',
+  aboutCopy: 'The background statement on the home page and the About page was drafted for you. Read it and edit anything that is not true to you.',
+  aiAssistanceWording: 'The line about AI coding assistants appears on the About page and every case study. Approve or reword it.',
   educationDates: 'The education row has no dates. Add them in src/content/record.ts.',
   projectDescriptions: 'Project descriptions were written from the repositories. Confirm your role and the claims.',
 }

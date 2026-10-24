@@ -26,9 +26,9 @@ const clamp = (value: number, min: number, max: number): number =>
 export function RulesPanel(props: RulesPanelProps) {
   const base = useId()
   return (
-    <details className="sign panel rules" open>
+    <details className="panel rules" open>
       <summary className="rules__summary">
-        <h3 className="panel__title">Change the rules</h3>
+        <h2 className="panel__title">Change the rules</h2>
         <span className="rules__hint">Permissions and budget are the only dials. Risk is computed.</span>
       </summary>
 
@@ -78,7 +78,7 @@ export function RulesPanel(props: RulesPanelProps) {
         </div>
       </div>
 
-      <button type="button" className="chip-btn chip-btn--plain" onClick={props.onReset}>
+      <button type="button" className="btn-quiet" onClick={props.onReset}>
         Reset rules for this request
       </button>
     </details>

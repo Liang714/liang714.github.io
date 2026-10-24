@@ -2,11 +2,10 @@ import { Link, useParams } from 'react-router-dom'
 import { ButtonLink } from '../components/ButtonLink.tsx'
 import { CautionList } from '../components/CautionList.tsx'
 import { Diagram } from '../components/Diagram.tsx'
-import { Pictogram } from '../components/Pictogram.tsx'
+import { PageHead } from '../components/PageHead.tsx'
 import { RepoLine } from '../components/RepoLine.tsx'
 import { ResultTable } from '../components/ResultTable.tsx'
-import { SignGlyph, StateSign } from '../components/StateSign.tsx'
-import { SignTagList } from '../components/SignTag.tsx'
+import { TagList } from '../components/Tag.tsx'
 import { site } from '../config/site.ts'
 import { findCaseStudy, nextCaseStudy } from '../content/projects/index.ts'
 import { usePageMeta } from '../hooks/usePageMeta.ts'
@@ -37,65 +36,42 @@ export default function CaseStudyPage() {
       : 'Every commit in the repository is made under one author identity (the GitHub account Liang714).'
 
   return (
-    <article className="case" aria-labelledby="case-title">
-      <header className="case-hero">
-        <div className="wrap">
-          <Link className="back-link" to={{ pathname: '/', hash: '#work' }}>
-            <Pictogram name="arrow" size={20} className="back-link__icon" />
-            All work
-          </Link>
-
-          <div className="gantry case-hero__gantry">
-            <div className="gantry__beam" aria-hidden="true" />
-            <span className="gantry__rod gantry__rod--l" aria-hidden="true" />
-            <span className="gantry__rod gantry__rod--r" aria-hidden="true" />
-            <div className="sign case-hero__panel hang">
-              <div className="case-hero__title">
-                <span className="case-hero__plate" aria-hidden="true">
-                  <Pictogram name={study.pictogram} size={44} />
-                </span>
-                <h1 id="case-title">{study.title}</h1>
-              </div>
-              <p className="case-hero__headline">{study.headline}</p>
-
-              <div className="case-card__result case-hero__result">
-                <p>
-                  <strong>Measured.</strong> {study.result.text}
-                </p>
-                <p className="case-card__caveat">
-                  <StateSign kind="caution" size={20} />
-                  <span>{study.result.caveat}</span>
-                </p>
-              </div>
-
-              <dl className="case-facts">
-                <div>
-                  <dt>When</dt>
-                  <dd>{study.period}</dd>
-                </div>
-                <div>
-                  <dt>Status</dt>
-                  <dd>{study.status}</dd>
-                </div>
-                <div>
-                  <dt>Code</dt>
-                  <dd>
-                    <RepoLine repo={study.repo} />
-                  </dd>
-                </div>
-                <div>
-                  <dt>Built with</dt>
-                  <dd>{study.stack.join(' · ')}</dd>
-                </div>
-              </dl>
-              <SignTagList tags={study.tags} label="Status at a glance" />
-            </div>
-          </div>
+    <article className="page case" aria-labelledby="case-title">
+      <PageHead title={study.title} titleId="case-title" lead={study.headline} back={{ to: '/work/', label: 'All work' }}>
+        <div className="case__result">
+          <p>
+            <strong>Measured.</strong> {study.result.text}
+          </p>
+          <p className="case__caveat">
+            <span className="caution-list__mark" aria-hidden="true" />
+            <span>{study.result.caveat}</span>
+          </p>
         </div>
-      </header>
+        <dl className="case__facts">
+          <div>
+            <dt>When</dt>
+            <dd>{study.period}</dd>
+          </div>
+          <div>
+            <dt>Status</dt>
+            <dd>{study.status}</dd>
+          </div>
+          <div>
+            <dt>Code</dt>
+            <dd>
+              <RepoLine repo={study.repo} />
+            </dd>
+          </div>
+          <div>
+            <dt>Built with</dt>
+            <dd>{study.stack.join(', ')}</dd>
+          </div>
+        </dl>
+        <TagList tags={study.tags} label="Status at a glance" />
+      </PageHead>
 
-      <div className="wrap case-layout">
-        <nav className="case-toc" aria-label="On this page">
+      <div className="case__layout">
+        <nav className="case__toc" aria-label="On this page">
           <ol>
             {toc.map((item) => (
               <li key={item.id}>
@@ -105,7 +81,7 @@ export default function CaseStudyPage() {
           </ol>
         </nav>
 
-        <div className="case-body">
+        <div className="case__body">
           <section id="problem" aria-labelledby="problem-title" tabIndex={-1}>
             <h2 id="problem-title">The problem</h2>
             {study.problem.map((paragraph) => (
@@ -115,10 +91,10 @@ export default function CaseStudyPage() {
 
           <section id="built" aria-labelledby="built-title" tabIndex={-1}>
             <h2 id="built-title">What is in it</h2>
-            <ul className="mark-list mark-list--body">
+            <ul className="mark-list">
               {study.built.map((item) => (
                 <li key={item}>
-                  <SignGlyph tone="green" />
+                  <span className="mark mark--solid" aria-hidden="true" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -172,10 +148,10 @@ export default function CaseStudyPage() {
           <section id="not-built" aria-labelledby="not-built-title" tabIndex={-1}>
             <h2 id="not-built-title">Not built yet</h2>
             <p>Stated plainly so nobody has to guess where the edges are.</p>
-            <ul className="mark-list mark-list--body">
+            <ul className="mark-list">
               {study.notBuilt.map((item) => (
                 <li key={item}>
-                  <SignGlyph tone="neutral" />
+                  <span className="mark mark--ring" aria-hidden="true" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -188,7 +164,13 @@ export default function CaseStudyPage() {
             <p>{site.aiAssistance}</p>
           </aside>
 
-          <nav className="case-next" aria-label="Next case study">
+          {study.slug === 'computer-agent' && (
+            <p className="case__gate">
+              <Link to="/gate/">Send your own requests through the gates</Link>, with the same rules, in your browser.
+            </p>
+          )}
+
+          <nav className="case__next" aria-label="Next case study">
             <p>Next case study</p>
             <ButtonLink to={`/work/${next.slug}/`}>{next.title}</ButtonLink>
           </nav>

@@ -5,7 +5,6 @@ export const sidequest: CaseStudy = {
   slug: 'sidequest',
   title: 'SIDEQUEST',
   headline: 'A product built phase by phase, with AI as a layer that never publishes on its own.',
-  pictogram: 'quest',
   period: 'Aug–Sep 2026',
   summary:
     'A Seoul-first platform that turns free time into group activities. A Next.js web app is wired end to end to a FastAPI backend with auth, quests, friends, WebSocket quest rooms and gamification, plus local-LLM quest generation behind a provider abstraction.',

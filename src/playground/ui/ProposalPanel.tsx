@@ -31,8 +31,8 @@ export function ProposalPanel({
   const editId = useId()
   const fooledId = useId()
   return (
-    <div className="sign panel">
-      <h3 className="panel__title">The proposal</h3>
+    <div className="panel">
+      <h2 className="panel__title">The proposal</h2>
 
       <dl className="panel__facts">
         <div>

@@ -29,28 +29,28 @@ export function RedTeam({ rows }: { rows: readonly LedgerRow[] | undefined }) {
   }
 
   return (
-    <div className="sign panel">
-      <h3 className="panel__title">Try to break the guarantees</h3>
+    <div className="panel">
+      <h2 className="panel__title">Try to break the guarantees</h2>
       <p>
         Two things the design promises by construction, not by convention. Both attempts are simulated and both are refused.
       </p>
 
       <div className="redteam">
         <div className="redteam__block">
-          <h4>Rewrite history</h4>
+          <h3>Rewrite history</h3>
           <p className="redteam__text">The log is append-only because the database refuses to update or delete rows.</p>
           <div className="btn-row">
-            <button type="button" className="chip-btn chip-btn--plain" onClick={() => tamper('update')}>
+            <button type="button" className="btn-quiet" onClick={() => tamper('update')}>
               Edit row {target}
             </button>
-            <button type="button" className="chip-btn chip-btn--plain" onClick={() => tamper('delete')}>
+            <button type="button" className="btn-quiet" onClick={() => tamper('delete')}>
               Delete row {target}
             </button>
           </div>
         </div>
 
         <div className="redteam__block">
-          <h4>Raise a file’s trust</h4>
+          <h3>Raise a file’s trust</h3>
           <p className="redteam__text">Trust can only be lowered. Pick a starting level and a level to claim.</p>
           <div className="redteam__selects">
             <div className="field">
@@ -84,7 +84,7 @@ export function RedTeam({ rows }: { rows: readonly LedgerRow[] | undefined }) {
               </select>
             </div>
           </div>
-          <button type="button" className="chip-btn chip-btn--plain" onClick={promote}>
+          <button type="button" className="btn-quiet" onClick={promote}>
             Try it
           </button>
         </div>

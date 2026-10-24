@@ -17,21 +17,23 @@ if (!SEO.test(shell)) throw new Error('dist/index.html has no <!--seo:start--> b
 // The asset URL prefix (the Vite base) is read from the built shell, so subpaths work.
 const assets = await readdir(path.join(dist, 'assets'))
 const prefix = shell.match(/(?:src|href)="([^"]*?)assets\/index-[^"]+\.js"/)?.[1] ?? '/'
-const preloads = ['barlow-condensed-latin-700-normal', 'barlow-condensed-latin-800-normal', 'overpass-latin-wght-normal']
+const preloads = ['chivo-latin-wght-normal']
   .map((stem) => assets.find((file) => file.startsWith(stem) && file.endsWith('.woff2')))
   .filter(Boolean)
   .map((file) => `    <link rel="preload" href="${prefix}assets/${file}" as="font" type="font/woff2" crossorigin />`)
   .join('\n')
 
-// Case-study pages load their own chunk; fetch it in parallel with the main bundle on those routes.
-const caseChunk = assets.find((file) => file.startsWith('CaseStudyPage-') && file.endsWith('.js'))
-const chunkHint = caseChunk ? `\n    <link rel="modulepreload" href="${prefix}assets/${caseChunk}" />` : ''
+// Detail pages load their own chunk; fetch it in parallel with the main bundle on those routes.
+const chunkHint = (route) => {
+  const file = route.chunk && assets.find((name) => name.startsWith(`${route.chunk}-`) && name.endsWith('.js'))
+  return file ? `\n    <link rel="modulepreload" href="${prefix}assets/${file}" />` : ''
+}
 
 const withSeo = (route) =>
   shell.replace(
     SEO,
     () =>
-      `<!--seo:start-->\n${renderSeoBlock(route)}\n    <!--seo:end-->\n${preloads}${route.kind === 'case' ? chunkHint : ''}`,
+      `<!--seo:start-->\n${renderSeoBlock(route)}\n    <!--seo:end-->\n${preloads}${chunkHint(route)}`,
   )
 
 const routes = routeTable()

@@ -1,72 +1,60 @@
+import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { site } from '../config/site.ts'
-import { Pictogram } from './Pictogram.tsx'
+import { useFitName } from '../hooks/useFitName.ts'
+import { scrollToTarget } from '../lib/scroll.ts'
 
+/** The name returns at full width and is cropped by the bottom edge. */
 export function SiteFooter() {
   const year = new Date().getFullYear()
+  const box = useRef<HTMLParagraphElement | null>(null)
+  const word = useRef<HTMLSpanElement | null>(null)
+  useFitName(box, word, false)
+
   return (
-    <footer className="site-footer">
-      <div className="wrap">
-        <div className="site-footer__grid">
-          <div>
-            <p className="site-footer__name">{site.name}</p>
-            <p className="site-footer__role">
-              {site.identity.split(' | ').map((part, index) => (
-                <span key={part}>
-                  {index > 0 && (
-                    <span className="site-footer__sep" aria-hidden="true">
-                      ·
-                    </span>
-                  )}
-                  {part}
-                </span>
-              ))}
-            </p>
-          </div>
-
-          <nav aria-label="Footer">
-            <ul className="site-footer__links">
-              {site.nav.map((item) => (
-                <li key={item.id}>
-                  <Link to={{ pathname: '/', hash: `#${item.id}` }}>
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          <ul className="site-footer__links" aria-label="Elsewhere">
+    <footer className="foot">
+      <div className="foot__row">
+        <p>
+          © {year} <span translate="no">{site.name}</span>
+        </p>
+        <button type="button" className="foot__top" onClick={() => scrollToTarget(0)}>
+          Back to top
+        </button>
+      </div>
+      <nav className="foot__nav" aria-label="Footer">
+        <ul>
+          <li>
+            <Link to="/about/">About</Link>
+          </li>
+          <li>
+            <Link to="/work/">Work</Link>
+          </li>
+          <li>
+            <Link to="/stack/">Stack</Link>
+          </li>
+          <li>
+            <Link to="/record/">Record</Link>
+          </li>
+          <li>
+            <Link to="/gate/">The gate, in full</Link>
+          </li>
+          <li>
+            <a href={site.github} target="_blank" rel="noopener noreferrer">
+              GitHub
+            </a>
+          </li>
+          {site.linkedin && (
             <li>
-              <a href={site.github} target="_blank" rel="noopener noreferrer">
-                <Pictogram name="branch" size={22} />
-                GitHub
+              <a href={site.linkedin} target="_blank" rel="noopener noreferrer">
+                LinkedIn
               </a>
             </li>
-            {site.linkedin && (
-              <li>
-                <a href={site.linkedin} target="_blank" rel="noopener noreferrer">
-                  <Pictogram name="external" size={22} />
-                  LinkedIn
-                </a>
-              </li>
-            )}
-            {site.email && (
-              <li>
-                <a href={`mailto:${site.email}`}>
-                  <Pictogram name="mail" size={22} />
-                  Email
-                </a>
-              </li>
-            )}
-          </ul>
-        </div>
-
-        <p className="site-footer__small">
-          © {year} {site.name}. Built with React, TypeScript and Vite. Figures come from project documents and result
-          files, printed beside their limits.
-        </p>
-      </div>
+          )}
+        </ul>
+      </nav>
+      <p ref={box} className="foot__word" aria-hidden="true" translate="no">
+        <span ref={word}>{site.shortName}</span>
+      </p>
     </footer>
   )
 }

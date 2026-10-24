@@ -2,7 +2,9 @@ export interface RouteMeta {
   path: string
   title: string
   description: string
-  kind: 'home' | 'case' | '404'
+  kind: 'home' | 'page' | 'case' | '404'
+  /** The lazy chunk this route loads, so the build can fetch it early. */
+  chunk?: string
 }
 
 export function siteUrl(): string

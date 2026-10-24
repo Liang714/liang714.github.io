@@ -4,8 +4,8 @@ import type { LedgerRow } from '../types.ts'
 /** The audit trail the original writes to SQLite. Payload fields are abbreviated; timestamps are omitted. */
 export function Ledger({ rows }: { rows: readonly LedgerRow[] | undefined }) {
   return (
-    <div className="sign panel">
-      <h3 className="panel__title">The audit log</h3>
+    <div className="panel">
+      <h2 className="panel__title">The audit log</h2>
       {rows === undefined ? (
         <p>The ledger fills as the gates open. Nothing in it can be edited afterwards.</p>
       ) : (

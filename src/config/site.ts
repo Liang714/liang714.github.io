@@ -64,8 +64,6 @@ export const site: SiteConfig = {
     'My projects are built with AI coding assistants. The repositories carry the design notes, specs and test history behind the work.',
   nav: [
     { id: 'work', label: 'Work' },
-    { id: 'gate-demo', label: 'Gate demo' },
-    { id: 'about', label: 'About' },
     { id: 'stack', label: 'Stack' },
     { id: 'record', label: 'Record' },
     { id: 'contact', label: 'Contact' },

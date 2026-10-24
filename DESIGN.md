@@ -1,274 +1,255 @@
 ---
 name: Liang — AI Engineer portfolio
-description: A site-entrance sign system. Four colours each mean one thing, and signs hang from a gantry to deliver verdicts.
+description: The name as a monument, with the owner's own safety gate live in the first screen. Graphite ground, one cobalt field, one pale field, safety orange for the single action.
 colors:
-  sheet: "#f3f6f4"
-  sheet-raised: "#e6ebe8"
-  ink: "#0c0f10"
-  ink-soft: "#2f383c"
-  ink-quiet: "#55616a"
-  rule: "#c3ccc8"
-  rule-strong: "#8b9792"
-  sign-face: "#fbfcfb"
-  sign-face-rule: "#d3dad7"
-  board: "#0f1314"
-  night-sheet: "#0e1112"
-  night-sheet-raised: "#161b1c"
-  night-ink: "#eef2f0"
-  night-sign-face: "#e8edeb"
-  night-board: "#070a0b"
-  action-blue: "#0a59b5"
-  permit-green: "#0e7a55"
-  caution-yellow: "#ffc20e"
-  block-red: "#c8281e"
-  on-signal: "#ffffff"
-  on-yellow: "#0c0f10"
-  blue-text-night: "#7db5ff"
-  green-text-night: "#46d09a"
-  red-text-night: "#ff7d70"
+  graphite: "#17181a"
+  graphite-raised: "#222427"
+  graphite-lifted: "#2e3135"
+  graphite-high: "#3a3e43"
+  ink: "#eff0f1"
+  ink-soft: "#c9cbcf"
+  ink-quiet: "#a8abb0"
+  safety-orange: "#ff4a1f"
+  safety-orange-hover: "#ff6a45"
+  ask-blue: "#8da7ff"
+  ask-blue-hover: "#a9bcff"
+  cobalt: "#1341d6"
+  cobalt-deep: "#0f33a8"
+  cobalt-deepest: "#0c2a8c"
+  on-cobalt: "#ffffff"
+  on-cobalt-soft: "rgb(255 255 255 / 0.9)"
+  paper: "#eceeef"
+  paper-ink: "#17181a"
+  paper-soft: "#33363a"
+  paper-quiet: "#4f5358"
 typography:
-  display:
-    fontFamily: "'Barlow Condensed', 'Arial Narrow', 'Helvetica Neue', sans-serif"
-    fontSize: "clamp(3.1rem, 1.3rem + 7vw, 6rem)"
-    fontWeight: 700
-    lineHeight: 0.92
-    letterSpacing: "-0.005em"
-  headline:
-    fontFamily: "'Barlow Condensed', 'Arial Narrow', 'Helvetica Neue', sans-serif"
-    fontSize: "clamp(2.25rem, 1.5rem + 3vw, 3.75rem)"
-    fontWeight: 700
+  monument:
+    fontFamily: "'Chivo Variable', 'Helvetica Neue', Arial, sans-serif"
+    fontSize: "min(27vw, 46svh), then fitted by script to span the page width"
+    fontWeight: 900
+    lineHeight: 0.9
+    letterSpacing: "-0.03em"
+  poster:
+    fontFamily: "'Chivo Variable', 'Helvetica Neue', Arial, sans-serif"
+    fontSize: "clamp(3.5rem, 1.5rem + 9.5vw, 10.5rem)"
+    fontWeight: 900
+    lineHeight: 0.9
+    letterSpacing: "-0.05em"
+  head:
+    fontFamily: "'Chivo Variable', 'Helvetica Neue', Arial, sans-serif"
+    fontSize: "clamp(2.25rem, 1rem + 5vw, 5rem)"
+    fontWeight: 900
     lineHeight: 0.98
-    letterSpacing: "-0.005em"
-  title:
-    fontFamily: "'Barlow Condensed', 'Arial Narrow', 'Helvetica Neue', sans-serif"
-    fontSize: "clamp(1.5rem, 1.25rem + 1vw, 2rem)"
-    fontWeight: 700
-    lineHeight: 1.04
-  body:
-    fontFamily: "'Overpass Variable', 'Helvetica Neue', Arial, sans-serif"
-    fontSize: "1.0625rem"
-    fontWeight: 400
-    lineHeight: 1.62
-  label:
-    fontFamily: "'Barlow Condensed', 'Arial Narrow', 'Helvetica Neue', sans-serif"
-    fontSize: "1.2rem"
-    fontWeight: 700
+    letterSpacing: "-0.045em"
+  sub:
+    fontFamily: "'Chivo Variable', 'Helvetica Neue', Arial, sans-serif"
+    fontSize: "clamp(1.625rem, 1.1rem + 1.5vw, 2.25rem)"
+    fontWeight: 900
     lineHeight: 1.1
-    letterSpacing: "0.05em"
+    letterSpacing: "-0.03em"
+  lead:
+    fontFamily: "'Chivo Variable', 'Helvetica Neue', Arial, sans-serif"
+    fontSize: "clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem)"
+    fontWeight: 600
+    lineHeight: 1.32
+    letterSpacing: "-0.01em"
+  body:
+    fontFamily: "'Chivo Variable', 'Helvetica Neue', Arial, sans-serif"
+    fontSize: "clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem)"
+    fontWeight: 400
+    lineHeight: 1.4
+    letterSpacing: "-0.01em"
+  label:
+    fontFamily: "'Chivo Variable', 'Helvetica Neue', Arial, sans-serif"
+    fontSize: "clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem)"
+    fontWeight: 700
+    lineHeight: 1.4
+    letterSpacing: "-0.01em"
   code:
-    fontFamily: "'Overpass Mono Variable', ui-monospace, 'SF Mono', Menlo, Consolas, monospace"
+    fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace"
     fontSize: "0.8125rem"
     fontWeight: 400
     lineHeight: 1.55
 rounded:
-  plate: "6px"
-  chip: "8px"
-  button: "10px"
-  field: "10px"
-  sign: "14px"
+  none: "0px"
+  round: "50%"
 spacing:
-  s1: "4px"
-  s2: "8px"
-  s3: "12px"
-  s4: "16px"
-  s5: "24px"
-  s6: "32px"
-  s7: "48px"
-  s8: "72px"
-  s9: "112px"
+  margin: "clamp(16px, 2.2vw, 32px)"
+  gap: "clamp(16px, 2vw, 32px)"
+  section: "clamp(72px, 9vw, 140px)"
+  bar: "64px"
 components:
   button-primary:
-    backgroundColor: "{colors.action-blue}"
-    textColor: "{colors.on-signal}"
-    typography: "{typography.label}"
-    rounded: "{rounded.button}"
+    backgroundColor: "{colors.safety-orange}"
+    textColor: "{colors.graphite}"
+    typography: "{typography.body}"
+    rounded: "{rounded.none}"
+    padding: "0 24px"
     height: "52px"
-    padding: "0 20px"
-  button-secondary:
-    backgroundColor: "{colors.sign-face}"
+  button-primary-hover:
+    backgroundColor: "{colors.safety-orange-hover}"
+  button-gate:
+    backgroundColor: "{colors.graphite-lifted}"
     textColor: "{colors.ink}"
     typography: "{typography.label}"
-    rounded: "{rounded.button}"
-    height: "52px"
+    rounded: "{rounded.none}"
     padding: "0 20px"
-  sign-panel:
-    backgroundColor: "{colors.sign-face}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.sign}"
-    padding: "clamp(24px, 3vw, 44px)"
-  sign-tag:
-    backgroundColor: "{colors.sign-face}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.chip}"
-    padding: "5px 12px 5px 8px"
-  chip-button:
-    backgroundColor: "{colors.sheet}"
-    textColor: "{colors.ink}"
+    height: "48px"
+  button-gate-ask:
+    backgroundColor: "{colors.ask-blue}"
+    textColor: "{colors.graphite}"
     typography: "{typography.label}"
-    rounded: "{rounded.chip}"
-    height: "44px"
-    padding: "0 18px"
-  chip-button-selected:
-    backgroundColor: "{colors.ink}"
-    textColor: "{colors.sheet}"
-  field:
-    backgroundColor: "{colors.on-signal}"
+    rounded: "{rounded.none}"
+    padding: "0 20px"
+    height: "48px"
+  exhibit:
+    backgroundColor: "{colors.graphite-raised}"
     textColor: "{colors.ink}"
-    rounded: "{rounded.field}"
-    height: "44px"
-    padding: "8px 12px"
-  sign-band:
-    backgroundColor: "{colors.ink}"
-    textColor: "{colors.sheet}"
-    height: "62px"
-  sign-band-link-current:
-    backgroundColor: "{colors.sheet}"
+    rounded: "{rounded.none}"
+    padding: "7% 8%"
+  bar-cobalt:
+    backgroundColor: "{colors.cobalt-deep}"
     textColor: "{colors.ink}"
-    rounded: "{rounded.chip}"
-    height: "44px"
+    typography: "{typography.body}"
+    rounded: "{rounded.none}"
+    height: "58px"
+  row-contact:
+    backgroundColor: "{colors.graphite-raised}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.none}"
+  button-mail:
+    backgroundColor: "{colors.safety-orange}"
+    textColor: "{colors.graphite}"
+    rounded: "{rounded.round}"
 ---
 
 # Design System: Liang — AI Engineer portfolio
 
 ## Overview
 
-**Creative North Star: "The Site Gantry"**
+**Creative North Star: "The Name on the Gate"**
 
-The site is a site-entrance sign system. Panels hang from an overhead beam, and each one carries a single verdict in the grammar of safety signage: a green rounded square for permitted, a blue disc for a human decision, a yellow triangle for caution, a red ring and slash for blocked. Everything else is restraint: a cool reflective-white ground, near-black ink, heavy condensed capitals for headings, and a plain humanist sans for reading. Colour is never decoration; it is information.
+The name is the loudest thing on the page, and the owner's own safety gate is the picture. The first screen holds a
+doorway-shaped gate with small requests drifting toward it, and one of them is always about to be allowed, denied or
+held for a person. Under it, the name LIANG is fitted to the full width of the screen and cropped by nothing but the
+edge. After that the page goes calm: a narrow column of reading, a list of interests that lights one line at a time,
+three project names passing a square that holds still, and then plain fields of colour with plain content.
 
-The tone is that of a document you can check. Results sit beside their limits, unfinished work wears a barrier stripe, and nothing is shaded to look more finished than it is. The world is daylight by default (a hiring engineer skimming on a laptop between meetings) with a night variant in which the ground goes to asphalt and the signs stay lit, as reflective sheeting does under headlights.
+The system is graphite with two other grounds (one cobalt field for the stack, one pale field for the record and the
+footer) and one loud colour, safety orange, which marks the single action on a screen and whatever the gate stopped.
+Everything is set in one family, Chivo, in the black weight and capitals for names and in the regular weight for
+reading. It refuses the dark-glow AI page, rounded cards with soft shadows, hairline grids, monospace costume and
+numbered sections. Depth is a step in tone. State is a shape beside a word.
 
 **Key Characteristics:**
-- Four signal colours, each locked to one meaning, used nowhere else.
-- Every verdict carries a shape and a word as well as a colour.
-- Sign faces stay reflective white in both themes; only the ground changes.
-- Heavy condensed signage capitals over a humanist highway sans; mono only for code and logs.
-- Signs hang from a beam; arrows sit in their own cell flush to the edge they point past.
-- Motion is one authored moment (signs hang into place) plus short state flips, each 300 ms or less.
+- One monumental word per screen; everything else is small and calm.
+- Flat tonal layers: graphite, raised graphite, lifted graphite. No shadows, no gradients, no hairlines.
+- One accent, safety orange, with one job: the action, and the thing that was stopped.
+- Colour never carries a state alone; every state has a shape and a word.
+- Square corners everywhere except one round mail button.
+- Motion is rare and authored: the name rises once, the gate demo moves, lines light as they cross the middle.
 
 ## Colors
 
-A cool, near-white ground with ink black, and four signal colours that mean exactly one thing each.
+A graphite room with one cobalt field and one pale field, lit by a single safety-orange signal.
 
 ### Primary
-- **Action Blue** (#0a59b5): a human decision or an action to take. Every primary button, every inline link on a light ground, the approval disc, selection rings. Never used for information.
+- **Safety Orange** (#ff4a1f): the one action on a screen ("See my work", the round mail button) and the token the gate denied. Hover lifts to #ff6a45. Text on it is graphite, never white.
 
 ### Secondary
-- **Permit Green** (#0e7a55): permitted, verified, working. The check square, "used in a project" tags, passing results. Darker text variant #0b6b49 on the sheet.
-
-### Tertiary
-- **Caution Yellow** (#ffc20e): a limit, a caveat, work in progress. Always paired with black ink and the triangle shape; never as text on a light ground (use #7a5a00).
-- **Block Red** (#c8281e): blocked, or a defect that was found. The prohibition ring and slash only. Red never means "important" or "error" in general.
+- **Ask Blue** (#8da7ff): a request the gate is holding for a person, the Approve button, a stage that is waiting. Hover #a9bcff. Always paired with the word "Held" or "Waiting".
+- **Cobalt** (#1341d6): the Stack field and the stack page. Its deeper steps (#0f33a8 for bars, #0c2a8c for hover) hold the content. **On Cobalt** (#ffffff) is the text on it, 7.7:1, with **On Cobalt Soft** (rgb(255 255 255 / 0.9)) for notes.
 
 ### Neutral
-- **Reflective Sheet** (#f3f6f4): the page ground in daylight. Cool, never cream.
-- **Raised Sheet** (#e6ebe8): alternating section bands and diagram canvases.
-- **Ink** (#0c0f10): text, beams, borders, the sticky band.
-- **Soft Ink** (#2f383c) and **Quiet Ink** (#55616a): secondary text (11:1 and 5.8:1 on the sheet).
-- **Sign Face** (#fbfcfb): the face of every sign panel, in both themes (#e8edeb at night).
-- **Night Sheet** (#0e1112): the ground at night; the dark board and sticky band are always dark.
-- **Hairline** (#c3ccc8) and **Strong Hairline** (#8b9792): table rules and dividers.
+- **Graphite** (#17181a): the ground of the page and the text on orange and on the pale field.
+- **Raised Graphite** (#222427): exhibits, panels, alternate contact rows. **Lifted Graphite** (#2e3135) and **High Graphite** (#3a3e43): controls and their hover.
+- **Ink** (#eff0f1): running text and the large words. **Ink Soft** (#c9cbcf): long reading. **Ink Quiet** (#a8abb0): labels and notes; 7:1 on graphite.
+- **Paper** (#eceeef): the record and the footer, with **Paper Ink** (#17181a), **Paper Soft** (#33363a) and **Paper Quiet** (#4f5358).
 
 ### Named Rules
-**The One Meaning Rule.** Red, yellow, blue and green each carry one meaning and nothing else. A fifth colour, or one of these used for emphasis, breaks the system.
-
-**The Shape-and-Word Rule.** No verdict is conveyed by colour alone. Each signal has a shape (square, disc, triangle, ring) and a short word beside it.
-
-**The Reflective Face Rule.** A sign face stays light in both themes. The night theme changes the ground around the signs, never the signs.
+**The One Signal Rule.** Safety orange appears on the single action of a screen and on a denied request. It never decorates, never appears twice as an action, and never fills a section.
+**The Shape Beside Colour Rule.** Orange, blue and ink marks always travel with a word (Denied, Held, Valid) and a shape (filled square, ring, dash). A state that only changes colour is a bug.
 
 ## Typography
 
-**Display Font:** Barlow Condensed (with Arial Narrow, Helvetica Neue)
-**Body Font:** Overpass Variable (with Helvetica Neue, Arial)
-**Label/Mono Font:** Barlow Condensed for labels; Overpass Mono Variable for code, paths and logs only
+**Display Font:** Chivo Variable (with Helvetica Neue, Arial, sans-serif)
+**Body Font:** Chivo Variable, the same file at regular weight
+**Label/Mono Font:** none; the system monospace stack appears only inside code blocks.
 
-**Character:** Barlow Condensed is drawn from highway and licence-plate lettering, so headings read as signage: tight, heavy, upright. Overpass is its calmer sibling from the same highway-sign tradition, which keeps long reading comfortable. Both are open (SIL OFL) and self-hosted as Latin subsets.
+**Character:** a black grotesque with the weight of a hoarding, letters nearly colliding at display size and open and plain at reading size. One family, so the contrast is size and weight alone.
 
 ### Hierarchy
-- **Display** (700, clamp(3.1rem, 1.3rem + 7vw, 6rem), 0.92): the hero headline only, capped at 5rem in the hero sign.
-- **Headline** (700, clamp(2.25rem, 1.5rem + 3vw, 3.75rem), 0.98): section titles, balanced across two lines.
-- **Title** (700, clamp(1.5rem, 1.25rem + 1vw, 2rem), 1.04): card titles, panel titles, notes.
-- **Body** (400, 1.0625rem, 1.62): all reading text, held to 68ch.
-- **Label** (700, 1.05 to 1.2rem, +0.05em, uppercase): buttons, gate names, nav items, table headers.
-- **Code** (400, 0.8125rem, 1.55): Overpass Mono, only for proposals, paths, ledger rows.
+- **Monument** (900, capitals, fitted to the page width and capped at half the screen height, 0.9, -0.03em): the name in the hero and again, cropped, in the footer.
+- **Poster** (900, capitals, clamp(3.5rem, 1.5rem + 9.5vw, 10.5rem), 0.9, -0.05em): project names, and the words Work, Stack and Record.
+- **Head** (900, capitals, clamp(2.25rem, 1rem + 5vw, 5rem), 0.98, -0.045em): the interests, and the title of every detail page.
+- **Sub** (900, clamp(1.625rem, 1.1rem + 1.5vw, 2.25rem), 1.1, -0.03em): section titles inside a detail page.
+- **Lead** (600, clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem), 1.32): the background statement and the line under each page title; 34em at most.
+- **Body** (400, clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem), 1.4): reading, 38em at most.
+- **Label** (700, clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem)): controls, notes, table cells. Never below 13px.
 
 ### Named Rules
-**The Signage Capitals Rule.** Uppercase condensed is for things you press or that name a gate. Prose is sentence case.
-
-**The Mono Is Data Rule.** Monospace appears only where the content is code, a path or a log line.
+**The Two Ends Rule.** The page uses enormous type and small type and little between. A headline is never set at an in-between size to "fit".
+**The Sentence Case Rule.** Capitals belong to the black display weight only. Labels, buttons and notes are sentence case, never tracked-out capitals.
 
 ## Layout
 
-A single container of up to 1240px with a fluid gutter (16 to 40px). Spacing is a 4px scale (4, 8, 12, 16, 24, 32, 48, 72, 112) with generous separation between groups and tighter rhythm inside them. Sections alternate between the sheet, the raised sheet and one always-dark board, so the page reads as a series of signs and boards rather than a continuous scroll.
+One pair of equal page margins (16 to 32px, widening past 1800px so the page stops growing). Home sections are full-bleed fields with content on that margin; the about block is a 12-column grid (3 for the facts, 9 for the statement); stack and record are a 5/7 and 6/6 split with a sticky giant word on the left. The work section is a grid in which one 450px square is sticky at the middle of the screen and the three names pass across it, 74svh apart. Section padding is 72 to 140px. On a phone the square becomes portrait (78vw by 104vw), the facts drop beneath it, and every split stacks.
 
-The hero is a stack, not a split: one monumental headline sign, then a second beam carrying six gate signs, so the mechanism is visible in the first viewport at 1440 by 900. Reading text is held to 68ch. Breakpoints used: 640, 800, 960, 1000 and 1100px. Gates collapse from six across to three to a compact two-column grid; the navigation collapses to a Menu disclosure whose rows keep their arrows on the right edge.
-
-### Named Rules
-**The Edge-Locked Arrow Rule.** An arrow lives in its own cell against the edge it points past: the right edge of a button, the right edge of a mobile nav row.
+Detail pages use the same margin: a head (way back, title, one lead sentence), then a reading column no wider than 38em for paragraphs, with a sticky contents list on case studies.
 
 ## Elevation & Depth
 
-Depth is physical and soft: signs hang from a beam and cast a diffuse shadow. There are no hard-offset or flat block shadows anywhere.
-
-### Shadow Vocabulary
-- **Sign** (`box-shadow: 0 1px 2px rgb(8 12 14 / 0.14), 0 16px 28px -18px rgb(8 12 14 / 0.42)`): the resting shadow of every sign panel.
-- **Lift** (`box-shadow: 0 2px 4px rgb(8 12 14 / 0.16), 0 24px 36px -20px rgb(8 12 14 / 0.52)`): reserved for a raised state.
+Flat by design. Depth is a step in tone: ground, raised, lifted, high. There are no shadows, no blur, no gradients and no hairlines; a separation is a gap or a change of tone.
 
 ### Named Rules
-**The Hang, Don't Float Rule.** A shadow implies the sign is hung from something. Nothing floats free of a beam, a band or a board.
+**The No Edge Lines Rule.** If two things need separating, give them space or a different tone. A 1px line is never the answer.
 
 ## Shapes
 
-Rounded rectangles throughout, with one family of radii: 14px for signs, 10px for buttons and fields, 8px for chips and tags, 6px for the black name plate. Every sign has a second inset border (a 2px ink line, 7px in from the edge) over its white margin, as real signs do. The verdict shapes are fixed: rounded square, disc, triangle, ring with a slash. A diagonal yellow-and-black barrier stripe (authored as an SVG pattern) marks work that is not finished.
+Square corners, everywhere. The one exception is the round orange mail button in the contact section. The gate is two posts and a beam; requests are rectangles; marks are 10px squares (filled), rings, or dashes. The monument is cropped by the footer edge and never by a letter's top.
 
 ## Components
 
 ### Buttons
-- **Shape:** 10px radius, 52px tall, a label cell and a separate arrow cell divided by a 2px rule.
-- **Primary:** Action Blue fill with white condensed uppercase label; the arrow cell is tinted 12% darker.
-- **Secondary:** Sign Face fill with an ink border and ink label.
-- **Hover / Focus:** lifts 1px with a sign shadow and the arrow slides 3px; pressed returns to flat. Focus is a 3px ring in Action Blue (light blue on dark grounds) offset 3px.
+- **Shape:** square, 52px tall, 24px side padding.
+- **Primary:** safety orange with graphite text; hover #ff6a45; the arrow slides 4px right; pressed moves 1px down at 0.99 scale. One per screen.
+- **Gate controls:** 48px tall, lifted graphite with ink text (Send an action), ask blue with graphite text (Approve), transparent with quiet text (Pause demo).
+- **Text link:** bold, underlined 2px with a 0.3em offset, 44px tall, arrow on the right.
 
-### Chip buttons
-- **Style:** 44px tall, 8px radius, 2px ink border, transparent fill, condensed uppercase label.
-- **State:** a pressed or selected chip inverts to ink fill with sheet text.
+### The gate demo
+- **Gate:** two ink posts 16px wide and a 16px beam, 150px tall; a floor bar in lifted graphite.
+- **Requests:** 48px rectangles with the tool name in bold and the target in regular weight. Ink while travelling, ask blue while held, orange once denied.
+- **Behaviour:** four requests play on their own and stop; a visitor can pause them or take over. Allowed requests pass, denied ones bounce back and fade, held ones wait for Approve or Decline and are declined after silence.
 
-### Sign panels
-- **Corner Style:** 14px with the inset ink border.
-- **Background:** Sign Face.
-- **Shadow Strategy:** the Sign shadow.
-- **Internal Padding:** clamp(24px, 3vw, 44px).
+### Exhibits
+- **The held square:** raised graphite, 450px (31vw), with content only in the top and bottom thirds so a project name can cross the middle. Each exhibit has a title, a result and its limit, and a note when its content is a simulation or an example.
 
-### Tags
-- **Style:** Sign Face fill, 1.5px strong-hairline outline, a small verdict glyph then a short statement. A yellow tag takes an ink outline.
-- **Use:** statuses and caveats, never decoration.
+### Lit lines
+- **Style:** poster-weight capitals that move from 40% to full ink as they cross the middle of the screen, with a right-aligned note naming the work behind each.
 
-### Inputs / Fields
-- **Style:** 44px minimum, 2px ink border, 10px radius, white fill; paths use the mono face.
-- **Focus:** 3px Action Blue ring, 2px offset.
+### Bars (stack)
+- **Style:** a deeper cobalt step, 58px tall, plus sign that turns into a minus; the open list shows each item with its evidence word.
+
+### Contact rows
+- **Style:** display type, full width, alternating graphite and raised graphite, the first row holding the round mail button.
 
 ### Navigation
-- **Style:** a sticky ink band, 62px tall, with the logo mark, name, role and condensed uppercase destinations. The followed section is a filled sheet-coloured pill with ink text. On small screens it becomes a Menu disclosure with full-width rows and right-edge arrows. A Day/Night toggle sits at the end.
-
-### Gate sign (signature)
-A compact sign for one pipeline stage: a black numeral plate, the stage name, a pictogram, and a verdict shape with its word. It flips like a split-flap (220ms) when its verdict arrives and is hung from the beam by a short rod.
-
-### Diagram
-Nodes are sign-faced rounded rectangles on the raised sheet, joined by orthogonal 2px ink connectors with arrowheads. Tone is a coloured outline plus a corner verdict glyph. Dashed outlines and connectors mean not built or not verified. Every diagram has a text alternative.
+- **Style:** 64px bar, transparent over the first screen and solid once the page moves; 44px links in quiet ink, ink with a 2px underline for the current section; the name hides on the narrowest phones.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** let a signal colour appear only with its meaning: blue for a decision or action, green for permitted or verified, yellow for a limit or work in progress, red for blocked.
-- **Do** pair every colour with its shape and a word.
-- **Do** put a caution sign and sentence beside every measured result.
-- **Do** keep sign faces light in both themes.
-- **Do** keep every motion at 300ms or less and collapse it under `prefers-reduced-motion`.
-- **Do** use the arrow cell, flush to the right edge, for every linking button.
+- **Do** let one word per screen be enormous and keep everything else small.
+- **Do** put the result and its limit side by side, and label every simulation and example as one.
+- **Do** pair every colour state with a shape and a word.
+- **Do** use only graphite, cobalt and paper as grounds, and safety orange for one action per screen.
+- **Do** keep reading text to 38em and at 17px or larger.
+- **Do** give every motion a reduced-motion version that keeps the content.
 
 ### Don't:
-- **Don't** add a fifth accent colour or use a signal colour for emphasis.
-- **Don't** use hard-offset or flat block shadows, gradients on text, or glass effects.
-- **Don't** set monospace outside code, paths and logs.
-- **Don't** convey state by colour or motion alone.
-- **Don't** use warm cream grounds or a dark-with-neon scheme; the ground is cool and the signs are the light.
+- **Don't** add hairlines, shadows, gradients, glows, glass, or rounded cards.
+- **Don't** set labels in capitals, letter-spaced, or in monospace; code is the only monospace.
+- **Don't** number sections or put a small label above a heading.
+- **Don't** fill a section with orange or use it for decoration.
+- **Don't** add a second typeface, a portrait or a screenshot the owner has not supplied, or any claim, number or customer that is not in the repositories.
+- **Don't** animate anything with layout properties; transform and opacity only.

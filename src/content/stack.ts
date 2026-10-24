@@ -1,4 +1,4 @@
-import type { StackGroup } from './types.ts'
+import type { Evidence, StackGroup } from './types.ts'
 
 /**
  * A schedule, not a skill meter. Each entry says where the technology was actually used.
@@ -63,3 +63,10 @@ export const stackGroups: readonly StackGroup[] = [
     ],
   },
 ]
+
+/** The words that mark each entry. Shape and text carry the meaning, never colour alone. */
+export const evidenceLabel: Record<Evidence, string> = {
+  used: 'Used in a project',
+  building: 'Building with it now',
+  earlier: 'Earlier work',
+}

@@ -1,18 +1,9 @@
 import { useId } from 'react'
 import type { DiagramEdge, DiagramNode, DiagramSpec, Side } from '../content/types.ts'
-import { StateSign } from './StateSign.tsx'
-import type { SignKind } from '../playground/types.ts'
 
 interface Point {
   x: number
   y: number
-}
-
-const toneSign: Partial<Record<NonNullable<DiagramNode['tone']>, SignKind>> = {
-  green: 'permitted',
-  yellow: 'caution',
-  blue: 'approval',
-  red: 'blocked',
 }
 
 function anchor(node: DiagramNode, side: Side): Point {
@@ -83,10 +74,9 @@ function NodeBox({ node }: { node: DiagramNode }) {
   const subLines = node.sub ? wrapLines(node.sub, Math.floor((node.w - 24) / 6.3)) : []
   const block = titleLines.length * TITLE_LINE + (subLines.length ? 4 + subLines.length * SUB_LINE : 0)
   const top = node.y + (node.h - block) / 2
-  const sign = node.tone ? toneSign[node.tone] : undefined
   return (
     <g className={`dg-node dg-node--${node.tone ?? 'neutral'}${node.dashed ? ' dg-node--dashed' : ''}`}>
-      <rect x={node.x} y={node.y} width={node.w} height={node.h} rx={10} />
+      <rect x={node.x} y={node.y} width={node.w} height={node.h} />
       <text className="dg-title" x={node.x + 12} y={top + 15}>
         {titleLines.map((line, index) => (
           <tspan key={line} x={node.x + 12} dy={index === 0 ? 0 : TITLE_LINE}>
@@ -103,10 +93,8 @@ function NodeBox({ node }: { node: DiagramNode }) {
           ))}
         </text>
       )}
-      {sign && (
-        <g transform={`translate(${node.x + node.w - 26}, ${node.y + 7})`}>
-          <StateSign kind={sign} size={18} />
-        </g>
+      {node.tone && node.tone !== 'neutral' && (
+        <rect className="dg-mark" x={node.x + node.w - 22} y={node.y + 10} width={10} height={10} />
       )}
     </g>
   )
@@ -138,7 +126,7 @@ export function Diagram({ spec }: { spec: DiagramSpec }) {
 
           {spec.groups?.map((group) => (
             <g className="dg-group" key={group.label}>
-              <rect x={group.x} y={group.y} width={group.w} height={group.h} rx={14} />
+              <rect x={group.x} y={group.y} width={group.w} height={group.h} />
               <text x={group.x + 14} y={group.y + 20}>
                 {group.label}
               </text>
