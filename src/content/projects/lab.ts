@@ -7,7 +7,7 @@ export const peftAblation: LabProject = {
   period: 'Aug 2026',
   summary: 'Full fine-tuning against LoRA and QLoRA under one fixed compute budget.',
   status: 'Step 4 of 10 done: baseline and full fine-tuning',
-  repo: { visibility: 'private' },
+  repo: { visibility: 'public', url: 'https://github.com/Liang714/peft-ablation-study' },
   stack: ['PyTorch', 'Transformers', 'PEFT', 'MLflow', 'pytest', 'Colab T4'],
   question:
     'How do full fine-tuning, LoRA (a rank sweep) and QLoRA compare on one task under the same compute budget, in accuracy, forgetting, training cost and inference latency?',
@@ -78,7 +78,7 @@ export const personalAgent: LabProject = {
   period: 'Jul–Aug 2026',
   summary: 'A hybrid assistant for mail, calendar and voice memos: a hosted model for tool-calling, local models for the rest.',
   status: 'Working prototype',
-  repo: { visibility: 'private' },
+  repo: { visibility: 'public', url: 'https://github.com/Liang714/Personal-Agent' },
   stack: ['Python', 'FastAPI', 'Anthropic API', 'Ollama (qwen2.5:14b)', 'faster-whisper', 'Google APIs', 'SQLite'],
   question:
     'Can a small hybrid setup, with a hosted model for the tool-calling loop and local models for narrower jobs, run a useful personal assistant at low cost?',

@@ -9,7 +9,7 @@ export const sidequest: CaseStudy = {
   summary:
     'A Seoul-first platform that turns free time into group activities. A Next.js web app is wired end to end to a FastAPI backend with auth, quests, friends, WebSocket quest rooms and gamification, plus local-LLM quest generation behind a provider abstraction.',
   status: 'Web and API working end to end. Mobile app not started',
-  repo: { visibility: 'private' },
+  repo: { visibility: 'public', url: 'https://github.com/Liang714/sidequest' },
   stack: ['Next.js', 'TypeScript', 'FastAPI', 'SQLAlchemy (async)', 'PostgreSQL', 'Valkey', 'WebSockets', 'pnpm + Turborepo', 'Ollama', 'Anthropic API'],
   tags: [
     { label: '131 API tests, CI workflow', tone: 'green' },

@@ -9,7 +9,7 @@ export const computerAgent: CaseStudy = {
   summary:
     'A headless core for a macOS computer-use agent, built on one rule: the model can only propose actions, and every action passes a fixed six-stage broker. A benchmark harness scores safety, not just success.',
   status: 'Pre-MVP: core and benchmark harness implemented',
-  repo: { visibility: 'private' },
+  repo: { visibility: 'public', url: 'https://github.com/Liang714/personal-computer-agent' },
   stack: ['Python 3.12', 'Pydantic', 'SQLite', 'pytest', 'mypy (strict)', 'ruff', 'GitHub Actions', 'Ollama (qwen3:14b)'],
   tags: [
     { label: '211 tests, strict typing, CI', tone: 'green' },
